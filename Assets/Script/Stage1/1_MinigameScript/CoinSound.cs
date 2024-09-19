@@ -9,11 +9,11 @@ public class CoinSound : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        InvokeRepeating("PlayCoinSound", 0f, 5f); // 코인 존재 시 사운드 재생
+        InvokeRepeating("PlayCoinSound", 0f, 5f); 
     }
 
     void PlayCoinSound()
     {
-        audioSource.Play(); // 사운드 재생
+        audioSource.Play(); 
     }
 }

@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI; // UI 사용을 위해 추가
+using UnityEngine.UI; 
 using System.Collections;
 using TMPro;
 using UnityEngine.SceneManagement;

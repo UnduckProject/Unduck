@@ -7,11 +7,11 @@ using UnityEngine.SceneManagement;
 public class DialogueManagerMinigame : MonoBehaviour
 {
     public string sceneName;
-    public List<string> dialogues; // 대화 내용을 저장하는 리스트
-    private int currentDialogueIndex = 0; // 현재 대화 인덱스
+    public List<string> dialogues; 
+    private int currentDialogueIndex = 0; 
 
-    private GameObject panel; // 대화창 패널
-    private Text dialogueText; // 대화 내용을 표시할 텍스트 UI
+    private GameObject panel; 
+    private Text dialogueText; 
 
 void Start()
 {
