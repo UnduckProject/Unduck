@@ -43,7 +43,7 @@ public class DuckMovement : MonoBehaviour
 
             dir = new Vector3(h, 0, v) * speed;
 
-            if (dir.magnitude > 0.1f)
+            if (dir.magnitude > 0.001f)
             {
                 
                 float targetAngle = Mathf.Atan2(h, v) * Mathf.Rad2Deg;

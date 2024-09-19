@@ -1,5 +1,23 @@
 {
   "dependencies": {
+    "com.meta.xr.depthapi": {
+      "version": "https://github.com/oculus-samples/Unity-DepthAPI.git?path=/Packages/com.meta.xr.depthapi",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.xr.oculus": "4.2.0"
+      },
+      "hash": "5af969a9836f66157d6dc8997774ed89ac5baa1f"
+    },
+    "com.meta.xr.depthapi.urp": {
+      "version": "https://github.com/oculus-samples/Unity-DepthAPI.git?path=/Packages/com.meta.xr.depthapi.urp",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.xr.oculus": "4.2.0"
+      },
+      "hash": "5af969a9836f66157d6dc8997774ed89ac5baa1f"
+    },
     "com.meta.xr.mrutilitykit": {
       "version": "68.0.1",
       "depth": 1,
