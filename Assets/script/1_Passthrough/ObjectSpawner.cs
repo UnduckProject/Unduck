@@ -50,7 +50,7 @@ public class ObjectSpawner : MonoBehaviour {
         do {
             spawnPosition = new Vector3(
                 Random.Range(-8, spawnArea.x),
-                Random.Range(6, spawnArea.y), 
+                Random.Range(2, spawnArea.y), 
                 Random.Range(-8, spawnArea.z)
             );
     } while (spawnPosition.x > -5 && spawnPosition.x < 5 && spawnPosition.z > -5 && spawnPosition.z < 5);

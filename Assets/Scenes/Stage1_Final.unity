@@ -1265,12 +1265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectPrefabs:
-  - {fileID: 6181981341756044124, guid: 46ba9282592f80b4f890d2fe3c1a04c8, type: 3}
-  - {fileID: 2127133275029809898, guid: 7941666c75d030e43821adf2123e2f14, type: 3}
-  - {fileID: 1297359294740291994, guid: 0d3ed796e28fda94f87bc73b05efac54, type: 3}
-  - {fileID: 7270821978688212221, guid: da30b4746bf9cf44482f54eef8c3d40f, type: 3}
-  - {fileID: 6685254978133768670, guid: 2483bf55f7585064facb5c40c35fefe3, type: 3}
-  - {fileID: 5040928418192857921, guid: c9602f096aa56c8468e7bd9c475fee34, type: 3}
+  - {fileID: 2446235030235944412, guid: c1ad0e9c26db48040a2679cd8909fb3d, type: 3}
   monsterPrefab: {fileID: 2732684518155842968, guid: c73ae6621f8832748a78dfb8aec6dd12, type: 3}
   monsterSound: {fileID: 8300000, guid: 3fd59773bc8bd3a47a5fbf254e68faab, type: 3}
   spawnInterval: 6

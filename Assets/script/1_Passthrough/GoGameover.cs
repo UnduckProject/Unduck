@@ -8,7 +8,7 @@ public class GoGameover : MonoBehaviour
     void Update()
     {
         // 플레이어의 Y 좌표 체크
-        if (playerController.transform.position.y < -5f)
+        if (playerController.transform.position.y < -30f)
         {
             LoadNewScene();
         }
