@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class DialogueManagerMinigame : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class DialogueManagerMinigame : MonoBehaviour
     private int currentDialogueIndex = 0; 
 
     private GameObject panel; 
-    private Text dialogueText; 
+    private TMP_Text dialogueText; 
 
 void Start()
 {
@@ -24,7 +25,7 @@ void Start()
     }
 
     
-    dialogueText = panel.transform.Find("DialogueText")?.GetComponent<Text>();
+    dialogueText = panel.transform.Find("DialogueText")?.GetComponent<TMP_Text>();
     if (dialogueText == null)
     {
         Debug.LogError("DialogueText component not found!");
@@ -59,6 +60,7 @@ void Start()
 
         if (currentDialogueIndex >= dialogues.Count)
         {
+            GameData.GameProgress=1;
             panel.SetActive(false); 
             GameData.LoadSceneName="Stage1";
             SceneManager.LoadScene(sceneName);

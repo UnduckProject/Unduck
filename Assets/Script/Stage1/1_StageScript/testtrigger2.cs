@@ -10,7 +10,8 @@ public class testtrigger2 : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            GameManager.Instance.SavePlayerPosition(transform.position);
+            GameData.DuckTransform=transform.position;
+            GameData.isBoss=true;
             LoadNextScene();
         }
     }

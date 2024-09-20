@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -10,21 +11,17 @@ public class DialogueManager : MonoBehaviour
     public List<string> dialogues; 
     private int currentDialogueIndex = 0; 
 
-    private GameObject panel; 
-    private Text dialogueText; 
+    public GameObject panel; 
+    public TMP_Text dialogueText; 
 
 void Start()
 {
-    
-    panel = transform.Find("Dialogue")?.gameObject;
     if (panel == null)
     {
         Debug.LogError("Dialogue panel not found!");
         return;
     }
 
-    
-    dialogueText = panel.transform.Find("DialogueText")?.GetComponent<Text>();
     if (dialogueText == null)
     {
         Debug.LogError("DialogueText component not found!");
@@ -57,10 +54,16 @@ void Start()
     {
         currentDialogueIndex++;
 
-        if (currentDialogueIndex >= dialogues.Count)
+        if (currentDialogueIndex >= dialogues.Count && GameData.GameProgress == 0)
         {
             panel.SetActive(false); 
             GameData.LoadSceneName="Stage1_Minigame";
+            SceneManager.LoadScene(sceneName);
+        }
+        else if(currentDialogueIndex >= dialogues.Count && GameData.GameProgress == 1)
+        {
+            panel.SetActive(false); 
+            GameData.LoadSceneName="Stage1_Passthrough";
             SceneManager.LoadScene(sceneName);
         }
         else

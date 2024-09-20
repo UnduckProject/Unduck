@@ -26,9 +26,9 @@ public class DuckMovement : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         cc = GetComponent<CharacterController>(); audioSource = GetComponent<AudioSource>();
-        if(GameData.GameProgress==0)
+        if(GameData.GameProgress == 1 || GameData.GameProgress == 2)
         {
-            transform.position = GameManager.Instance.playerPosition;
+            transform.position = GameData.DuckTransform;
         }
     }
 
@@ -61,7 +61,7 @@ public class DuckMovement : MonoBehaviour
             }
 
             
-            if (OVRInput.GetDown(OVRInput.Button.Three)&&GameData.GameProgress==0)
+            if (OVRInput.GetDown(OVRInput.Button.Three) && !GameData.isBoss)
             {
                 dir.y = 7.5f;
                 JumpSound(); 

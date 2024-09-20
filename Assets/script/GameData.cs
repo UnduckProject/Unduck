@@ -6,4 +6,8 @@ public class GameData
     public static int FirstFinalStage=0;
     public static Vector3 FirstBossTransform;
     public static float FirstBossHP=100;
+    public static Vector3 DuckTransform;
+    public static bool HasTalked1=false;
+    public static bool HasTalked2=false;
+    public static bool isBoss=false;
 }
