@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; 
+using TMPro;
+using UnityEngine.SceneManagement;
+using System.Collections; 
 
 public class GoalManager : MonoBehaviour
 {
@@ -10,9 +12,7 @@ public class GoalManager : MonoBehaviour
     public int remainingGoals = 0; 
 
     public TMP_Text goalCountText; 
-
-    public Canvas victoryCanvas; 
-   
+    public AudioSource audioSource;
 
     void Awake()
     {
@@ -42,7 +42,8 @@ public class GoalManager : MonoBehaviour
 
         if (remainingGoals <= 0)
         {
-            ShowVictoryCanvas();
+            GameData.GameProgress=1;
+            StartCoroutine(VictoryDelay());
         }
     }
 
@@ -54,23 +55,13 @@ public class GoalManager : MonoBehaviour
         }
     }
 
-    void ShowVictoryCanvas()
+    private IEnumerator VictoryDelay()
     {
-        if (victoryCanvas != null)
-        {
-            
-            victoryCanvas.gameObject.SetActive(true);
-            DialogueManagerMinigame dialogueManager = FindObjectOfType<DialogueManagerMinigame>();
+        audioSource.Play();
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("Stage1");
 
-            if (dialogueManager != null)
-            {
-                GameManager.Instance.PlusKey();
-                dialogueManager.StartDialogue(); 
-            }
-            else
-            {
-                Debug.LogError("DialogueManager not found!");
-            }
-        }
     }
+
+
 }

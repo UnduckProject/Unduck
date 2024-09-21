@@ -61,7 +61,7 @@ public class DuckMovement : MonoBehaviour
             }
 
             
-            if (OVRInput.GetDown(OVRInput.Button.Three) && !GameData.isBoss)
+            if (OVRInput.GetDown(OVRInput.Button.Two) && !GameData.isBoss)
             {
                 dir.y = 7.5f;
                 JumpSound(); 

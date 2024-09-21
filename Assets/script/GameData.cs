@@ -10,4 +10,8 @@ public class GameData
     public static bool HasTalked1=false;
     public static bool HasTalked2=false;
     public static bool isBoss=false;
+    public static bool NpcTarget=false;
+    public static bool winMsg1=false;
+    public static bool winMsg2=false;
+
 }

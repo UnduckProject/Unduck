@@ -63,7 +63,7 @@ void Start()
         else if(currentDialogueIndex >= dialogues.Count && GameData.GameProgress == 1)
         {
             panel.SetActive(false); 
-            GameData.LoadSceneName="Stage1_Passthrough";
+            GameData.LoadSceneName="Stage1_PassThrough 1";
             SceneManager.LoadScene(sceneName);
         }
         else

@@ -31,7 +31,7 @@ public class ObjectSpawner : MonoBehaviour {
                 isSpawning = false;
                 CancelInvoke("SpawnObject"); 
                 timerText.text = "시간 종료!";
-                GameManager.Instance.PlusKey();
+                GameData.GameProgress=2;
                 GameData.LoadSceneName="Stage1";
                 SceneManager.LoadScene("Loading");
  

@@ -5,6 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - RightController
+  - DialogPanel
+  - Canvas
+  - Floor
+  - Coin
+  - attack
+  - brokenGround
+  - PlayerWeapon
+  - Monster
   layers:
   - Default
   - TransparentFX
@@ -12,7 +20,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - slice
   - 
   - 
   - 

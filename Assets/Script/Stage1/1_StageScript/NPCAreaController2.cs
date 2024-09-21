@@ -7,20 +7,27 @@ public class NPCAreaController2 : MonoBehaviour
     public DialogueManager dialogueManager;
     public VRCameraMover cameraMover;
     public GameObject Quest;
+    private bool isQuest=false;
 
     void Update()
     {
         if(GameData.GameProgress == 1)
         {
-            Quest.SetActive(true);
+            GameData.HasTalked2=false;
+            if(!isQuest){
+                isQuest=true;
+                Quest.SetActive(true);
+            }
         }
-        else
+        else if(GameData.GameProgress==2)
         {
+            GameData.HasTalked2=true;
             Quest.SetActive(false);
         }
     }
     private void OnTriggerEnter(Collider other)
     {
+        Quest.SetActive(false);
         if (other.gameObject.tag == "Player" && !GameData.HasTalked2)
         {
             
@@ -30,7 +37,7 @@ public class NPCAreaController2 : MonoBehaviour
                 cameraMover.StartMoving();
                 dialogueManager.StartDialogue();
                 GameData.HasTalked2=true;
-                GameData.DuckTransform=(transform.position);
+                GameData.DuckTransform=transform.position;
             }
         }
     }
