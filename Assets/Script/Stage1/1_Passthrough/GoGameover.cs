@@ -3,12 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class GoGameover : MonoBehaviour
 {
-    public OVRPlayerController playerController; 
+    public OVRCameraRig camera; 
 
     void Update()
     {
-        // 플레이어의 Y 좌표 체크
-        if (playerController.transform.position.y < -30f)
+        if (camera.transform.position.y < -30f)
         {
             LoadNewScene();
         }
@@ -16,6 +15,6 @@ public class GoGameover : MonoBehaviour
 
     void LoadNewScene()
     {
-        SceneManager.LoadScene("GameOver"); // 씬 전환
+        SceneManager.LoadScene("GameOver");
     }
 }

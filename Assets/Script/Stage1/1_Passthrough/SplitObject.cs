@@ -12,9 +12,11 @@ public class SplitObject : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("PlayerWeapon"))
         {
+            Debug.Log("소리 나와야 해요!!!!!!!!!!!!!!!!!!!!!");
             //Vector3 splitDirection = collision.contacts[0].point - transform.position;
             //Split(splitDirection.normalized);
             PlayRandomSplitSound(collision.transform.position);
+            Debug.Log("소리 나와야 해요~");
         }
     }
 

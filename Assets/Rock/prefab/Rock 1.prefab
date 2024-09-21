@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 3601684642402782522}
   - component: {fileID: -6736657051002016692}
   - component: {fileID: 1788917780920482016}
+  - component: {fileID: 2202924014578822521}
   m_Layer: 6
   m_Name: Rock 1
-  m_TagString: Untagged
+  m_TagString: attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -183,3 +184,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   breakSound: {fileID: 8300000, guid: d11230aada070a148ad9cac9ac59514d, type: 3}
+--- !u!114 &2202924014578822521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2446235030235944412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558d6d67132df034ca24827efce75c6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
