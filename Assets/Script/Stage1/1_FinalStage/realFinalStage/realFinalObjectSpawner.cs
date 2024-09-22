@@ -45,42 +45,40 @@ public class realFinalObjectSpawner : MonoBehaviour {
     }
 
     private IEnumerator SpawnWithDelay() {
-        Vector3 spawnPosition;
-        Vector3 monsterSpawnPosition;
+    Vector3 spawnPosition;
+    Vector3 monsterSpawnPosition;
 
-        do {
-            spawnPosition = new Vector3(
-                Random.Range(-20, spawnArea.x),
-                Random.Range(20, spawnArea.y), 
-                Random.Range(-20, spawnArea.z)
-            );
-        } while (spawnPosition.x > -15 && spawnPosition.x < 15 && spawnPosition.z > -15 && spawnPosition.z < 15);
-
-        if (spawnPosition.z > 0) {
-            monsterSpawnPosition = new Vector3(spawnPosition.x - 1.5f, spawnPosition.y - 2.5f, spawnPosition.z + 5f);
-        } else {
-            monsterSpawnPosition = new Vector3(spawnPosition.x - 1.5f, spawnPosition.y - 2.5f, spawnPosition.z - 5f);
-        }
-        GameData.FirstBossTransform=monsterSpawnPosition;
-
-        GameObject monster = Instantiate(monsterPrefab, monsterSpawnPosition, Quaternion.identity);
-        AudioSource.PlayClipAtPoint(monsterSound, monsterSpawnPosition);
-
-        Vector3 directionToPlayer = (player.position - monsterSpawnPosition).normalized;
-        Quaternion lookRotation = Quaternion.LookRotation(directionToPlayer);
-        monster.transform.rotation = lookRotation;
-
-        yield return new WaitForSeconds(3f);
-
-        int randomIndex = Random.Range(0, objectPrefabs.Length);
-        GameObject selectedPrefab = objectPrefabs[randomIndex];
-
-        GameObject spawnedObject = Instantiate(selectedPrefab, spawnPosition, Quaternion.identity);
+    do {
         
-        Rigidbody rb = spawnedObject.AddComponent<Rigidbody>();
-        Vector3 direction = (player.position - spawnPosition).normalized;
-        rb.AddForce(direction * 55f, ForceMode.Impulse);
+        spawnPosition = new Vector3(
+            player.position.x + Random.Range(-10f, 10f),
+            player.position.y + Random.Range(0f, 5f), 
+            player.position.z + Random.Range(-10f, 10f)
+        );
+    } while (spawnPosition.x > -10 && spawnPosition.x < 15 && spawnPosition.z > -10 && spawnPosition.z < 15);
 
-        Destroy(monster, 3f);
-    }
+    monsterSpawnPosition = spawnPosition + new Vector3(-8f, -8f, -8f);
+    
+    GameData.FirstBossTransform = monsterSpawnPosition;
+
+    GameObject monster = Instantiate(monsterPrefab, monsterSpawnPosition, Quaternion.identity);
+    AudioSource.PlayClipAtPoint(monsterSound, monsterSpawnPosition);
+
+    Vector3 directionToPlayer = (player.position - monsterSpawnPosition).normalized;
+    Quaternion lookRotation = Quaternion.LookRotation(directionToPlayer);
+    monster.transform.rotation = lookRotation;
+
+    yield return new WaitForSeconds(2f);
+
+    int randomIndex = Random.Range(0, objectPrefabs.Length);
+    GameObject selectedPrefab = objectPrefabs[randomIndex];
+
+    GameObject spawnedObject = Instantiate(selectedPrefab, spawnPosition, Quaternion.identity);
+    
+    Rigidbody rb = spawnedObject.AddComponent<Rigidbody>();
+    Vector3 direction = (player.position - spawnPosition).normalized;
+    rb.AddForce(direction * 30f, ForceMode.Impulse);
+
+    Destroy(monster, 2.5f);
+}
 }

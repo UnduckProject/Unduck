@@ -13,7 +13,8 @@ public class realFinalStoryManager : MonoBehaviour
     public GameObject Boss;
     public GameObject BigBoss;
     private AudioSource audioSource;
-    
+    public GameObject backgroud1;
+    public GameObject backgroud2;
 
     private string [] storyLines = {
         "현실세계가 흔들리기 시작한다.",
@@ -27,6 +28,9 @@ public class realFinalStoryManager : MonoBehaviour
     private Coroutine alertSoundCoroutine;
     void Start()
     {
+        GameData.FirstFinalStage = 1;
+        backgroud1.SetActive(false);
+        backgroud2.SetActive(true);
         ShowNextLine();
         pressAText.gameObject.SetActive(true);
         StartCoroutine(AnimatePressAText());

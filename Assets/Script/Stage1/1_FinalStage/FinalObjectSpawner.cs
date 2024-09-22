@@ -48,7 +48,7 @@ public class FinalObjectSpawner : MonoBehaviour {
         do {
             spawnPosition = new Vector3(
                 Random.Range(-3, spawnArea.x),
-                Random.Range(16, spawnArea.y), 
+                Random.Range(18, spawnArea.y), 
                 Random.Range(-3, spawnArea.z)
             );
     } while (spawnPosition.x > 0 && spawnPosition.x < 10 && spawnPosition.z > 0 && spawnPosition.z < 10);

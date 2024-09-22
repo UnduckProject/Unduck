@@ -13252,11 +13252,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPrefabs:
   - {fileID: 2446235030235944412, guid: c1ad0e9c26db48040a2679cd8909fb3d, type: 3}
-  monsterPrefab: {fileID: 1845945369076765872, guid: d9af52bf624fb004abc7f4d28bdf39e2, type: 3}
+  monsterPrefab: {fileID: 7876363959096737858, guid: 310f268ebe120b542b495e41317cfb0e, type: 3}
   monsterSound: {fileID: 8300000, guid: dd68c6f0dfd306c489dc7d2919167e42, type: 3}
+  rockSound: {fileID: 8300000, guid: ea3485258d093e143944202333a562fe, type: 3}
   spawnInterval: 4
-  spawnArea: {x: 8, y: 2, z: 8}
-  player: {fileID: 0}
+  spawnArea: {x: 15, y: 10, z: 15}
+  player: {fileID: 994442480}
   timerText: {fileID: 1222080753}
   timer: 30
 --- !u!4 &1215230527

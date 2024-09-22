@@ -15,9 +15,9 @@ public class BossHp : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("attack"))
+        if (collision.gameObject.CompareTag("playerattack"))
         {
-            TakeDamage(10); 
+            TakeDamage(20); 
         }
     }
 

@@ -19,7 +19,7 @@ public class PlayerHp : MonoBehaviour
         
         if (collision.gameObject.CompareTag("attack"))
         {
-            TakeDamage(10); 
+            TakeDamage(25); 
         }
     }
 

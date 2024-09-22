@@ -10,10 +10,10 @@ public class BatController : MonoBehaviour
             if (attackRb != null)
             {
                 Vector3 bossPosition = GameData.FirstBossTransform;
-
                 Vector3 hitDirection = (bossPosition - collision.transform.position).normalized;
                 float hitForce = 80f;
                 attackRb.AddForce(hitDirection * hitForce, ForceMode.Impulse);
+                collision.gameObject.tag = "playerattack";
             }
         }
     }

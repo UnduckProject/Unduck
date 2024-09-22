@@ -21,6 +21,8 @@ TagManager:
   - Item
   - Melee
   - Shop
+  - ball
+  - playerattack
   layers:
   - Default
   - TransparentFX
@@ -29,9 +31,9 @@ TagManager:
   - Water
   - UI
   - slice
-  - 
-  - 
-  - 
+  - bat
+  - ball
+  - BatFollower
   - 
   - 
   - 

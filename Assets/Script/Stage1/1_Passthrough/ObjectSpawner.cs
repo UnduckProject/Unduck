@@ -8,7 +8,8 @@ public class ObjectSpawner : MonoBehaviour {
 
     public GameObject[] objectPrefabs; 
     public GameObject monsterPrefab; 
-    public AudioClip monsterSound; 
+    public AudioClip monsterSound;
+    public AudioClip rockSound; 
     public float spawnInterval = 1f; 
     public Vector3 spawnArea; 
     public Transform player; 
@@ -49,13 +50,14 @@ public class ObjectSpawner : MonoBehaviour {
          Vector3 spawnPosition;
         do {
             spawnPosition = new Vector3(
-                Random.Range(-8, spawnArea.x),
-                Random.Range(2, spawnArea.y), 
-                Random.Range(-8, spawnArea.z)
+                Random.Range(-15, spawnArea.x),
+                Random.Range(10, spawnArea.y), 
+                Random.Range(-15, spawnArea.z)
             );
-    } while (spawnPosition.x > -5 && spawnPosition.x < 5 && spawnPosition.z > -5 && spawnPosition.z < 5);
+    } while (spawnPosition.x > -10 && spawnPosition.x < 10 && spawnPosition.z > -10 && spawnPosition.z < 10);
 
-        Vector3 monsterSpawnPosition = new Vector3(spawnPosition.x - 1.5f, spawnPosition.y - 2.5f, spawnPosition.z);
+        Vector3 monsterSpawnPosition = new Vector3(spawnPosition.x , spawnPosition.y - 2f, spawnPosition.z);
+     
 
         GameObject monster = Instantiate(monsterPrefab, monsterSpawnPosition, Quaternion.identity);
         AudioSource.PlayClipAtPoint(monsterSound, monsterSpawnPosition);
@@ -64,7 +66,8 @@ public class ObjectSpawner : MonoBehaviour {
         Quaternion lookRotation = Quaternion.LookRotation(directionToPlayer);
         monster.transform.rotation = lookRotation;
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
+
 
         int randomIndex = Random.Range(0, objectPrefabs.Length);
         GameObject selectedPrefab = objectPrefabs[randomIndex];
@@ -73,7 +76,8 @@ public class ObjectSpawner : MonoBehaviour {
         
         Rigidbody rb = spawnedObject.AddComponent<Rigidbody>();
         Vector3 direction = (player.position - spawnPosition).normalized;
-        rb.AddForce(direction * 17f, ForceMode.Impulse);
+        AudioSource.PlayClipAtPoint(rockSound, monsterSpawnPosition);
+        rb.AddForce(direction * 25f, ForceMode.Impulse);
 
         Destroy(monster, 1f);
     }
