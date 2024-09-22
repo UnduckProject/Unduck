@@ -62,10 +62,12 @@ public class VRCameraMover : MonoBehaviour
     public void StartMoving()
     {
         isMoving = true;
+        isOrg = false;
     }
 
     public void StartOrgMoving()
     {
         isOrg = true;
+        isMoving = false;
     }
 }

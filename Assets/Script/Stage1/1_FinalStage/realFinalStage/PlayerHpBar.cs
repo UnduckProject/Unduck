@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class PlayerHpBar : MonoBehaviour
 {
-    public Slider hpSlider;
+    private Slider hpSlider;
 
     void Start()
     {

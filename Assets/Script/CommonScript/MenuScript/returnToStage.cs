@@ -12,6 +12,14 @@ public class returnToStage : MonoBehaviour
     {
         if (NextButton.interactable)
         {
+            if(GameData.GameProgress==0)
+            {
+                GameData.HasTalked1=false;
+            }
+            else if(GameData.GameProgress==1)
+            {
+                GameData.HasTalked2=false;
+            }
             StartCoroutine(LoadSceneAfterDelay());
         }
     }

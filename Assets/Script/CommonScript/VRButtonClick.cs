@@ -18,6 +18,7 @@ public class VRButtonInteraction : MonoBehaviour
 
     private void Update()
     {
+        // 일시 정지 상태에서도 버튼 클릭을 확인
         if (button.interactable && OVRInput.GetDown(OVRInput.Button.One))
         {
             button.onClick.Invoke(); 

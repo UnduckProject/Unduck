@@ -723,6 +723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e21ed06f440318e4bbf5d497d39ce08c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NextButton: {fileID: 0}
 --- !u!82 &8915609484369595006
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1384,6 +1385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e21ed06f440318e4bbf5d497d39ce08c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NextButton: {fileID: 0}
 --- !u!82 &1543756476609345977
 AudioSource:
   m_ObjectHideFlags: 0

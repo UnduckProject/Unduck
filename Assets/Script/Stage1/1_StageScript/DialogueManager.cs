@@ -71,4 +71,10 @@ void Start()
             dialogueText.text = dialogues[currentDialogueIndex];
         }
     }
+
+    public void StopDialogue()
+    {
+        currentDialogueIndex = 0; 
+        panel.SetActive(false); 
+    }
 }

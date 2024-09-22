@@ -40,4 +40,16 @@ public class NPCAreaController : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.tag == "Player" && !GameData.HasTalked1)
+        {
+            Quest.SetActive(true);
+            cameraMover.StartOrgMoving();
+            dialogueManager.StopDialogue();
+        }
+
+
+    }
 }
