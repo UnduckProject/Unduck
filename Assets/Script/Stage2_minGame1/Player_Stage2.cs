@@ -1,3 +1,4 @@
+/*Player Script*/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,10 +12,14 @@ public class Player_Stage2 : MonoBehaviour
     public int hasGrenades;
     public GameObject grenadeObj;
     public Camera followCamera;
+    public GameManager1 gamemanager;
+
+    // public SoundControl soundControl;
 
     public int ammo;
     public int health;
     public int coin;
+    public int score;
 
     public int maxAmmo;
     public int maxHealth;
@@ -24,26 +29,26 @@ public class Player_Stage2 : MonoBehaviour
     float hAxis;
     float vAxis;
 
-    bool wDown;
-    bool jDown;
-    bool fDown; // 공격버튼
-    bool gDown;
+    // bool wDown;
     bool rDown;
+    bool jDown;
+    bool fDown;
+    bool gDown;
+    bool reDown;
     bool iDown;
     bool sDown1;
     bool sDown2;
     bool sDown3;
 
-    bool isSide;       // 벽 충돌 여부
-    Vector3 sideVec;   // 벽 충돌 방향
-
     bool isJump;
     bool isDodge;
     bool isSwap;
-    bool isReload;
-    bool isFireReady = true; // 공격가능 여부
+    bool isReload = false;
+    bool isFireReady = true;
     bool isBorder;
     bool isDamage;
+    bool isShop;
+    bool isDead;
 
     Vector3 moveVec;
     Vector3 dodgeVec;
@@ -53,18 +58,19 @@ public class Player_Stage2 : MonoBehaviour
     MeshRenderer[] meshs;
 
     GameObject nearObject;
-    Weapon equipWeapon;
+    public Weapon equipWeapon;
     int equipWeaponIndex = -1;
-    float fireDelay; // 공격 딜레이 타임
+    float fireDelay;
 
     void Awake()
     {
         rigid = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
         meshs = GetComponentsInChildren<MeshRenderer>();
+
     }
 
-
+    // Update is called once per frame
     void Update()
     {
         GetInput();
@@ -79,15 +85,18 @@ public class Player_Stage2 : MonoBehaviour
         Interation();
     }
 
+
     void GetInput()
     {
+        // 키보드입력에 따라 0 ~ 1로 변환 left right up down
         hAxis = Input.GetAxisRaw("Horizontal");
         vAxis = Input.GetAxisRaw("Vertical");
-        wDown = Input.GetButton("Walk");
+        // wDown = Input.GetButton("Walk");
+        rDown = Input.GetButton("Run");
         jDown = Input.GetButtonDown("Jump");
+        reDown = Input.GetButtonDown("Reload");
         fDown = Input.GetButton("Fire1");
         gDown = Input.GetButtonDown("Fire2");
-        rDown = Input.GetButtonDown("Reload");
         iDown = Input.GetButtonDown("Interation");
         sDown1 = Input.GetButtonDown("Swap1");
         sDown2 = Input.GetButtonDown("Swap2");
@@ -96,25 +105,25 @@ public class Player_Stage2 : MonoBehaviour
 
     void Move()
     {
+        // x y z
         moveVec = new Vector3(hAxis, 0, vAxis).normalized;
 
+        // 회피 시 업데이트 안되게
         if (isDodge)
             moveVec = dodgeVec;
 
-        if (isSwap || isReload || !isFireReady)
+        // 스왑 및 공격 시 못움직이게
+        if (isSwap || !isFireReady || isDead)
             moveVec = Vector3.zero;
 
-        // 삼항 연산자 사용
+
         // transform + 벽뚫방지
         if (!isBorder)
             transform.position += moveVec * (rDown ? 1.3f : 1f) * speed * Time.deltaTime;
 
-        anim.SetBool("isRun", moveVec != Vector3.zero);
-        anim.SetBool("isWalk", wDown);
-
-        // 스왑 및 공격 시 못움직이게
-        if (isSwap || !isFireReady)
-            moveVec = Vector3.zero;
+        // animator
+        // anim.SetBool("isWalk", moveVec != Vector3.zero);
+        anim.SetBool("isRun", rDown);
     }
 
     void Turn()
@@ -125,7 +134,7 @@ public class Player_Stage2 : MonoBehaviour
         // #2. 마우스에 의한 회전
 
         // Ray란?, ScreenPointToRay() : 스크린에서 월드로 Ray를 쏘는 함수
-        if (fDown)
+        if (fDown && !isDead)
         {
             Ray ray = followCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit rayHit;
@@ -141,12 +150,16 @@ public class Player_Stage2 : MonoBehaviour
 
     void Jump()
     {
-        if (jDown && moveVec == Vector3.zero && !isJump && !isDodge && !isSwap)
+        if (jDown && moveVec == Vector3.zero && !isJump && !isDodge && !isDead)
         {
+            // 물리엔진에 힘을 준다. 여기선 즉발적인 Impulse
             rigid.AddForce(Vector3.up * 15, ForceMode.Impulse);
             anim.SetBool("isJump", true);
             anim.SetTrigger("doJump");
+
             isJump = true;
+
+            // soundControl.jumpSound.Play();
         }
     }
 
@@ -155,7 +168,7 @@ public class Player_Stage2 : MonoBehaviour
         if (hasGrenades == 0)
             return;
 
-        if (gDown && !isReload && !isSwap)
+        if (gDown && !isReload && !isSwap && !isDead)
         {
 
             Ray ray = followCamera.ScreenPointToRay(Input.mousePosition);
@@ -167,7 +180,6 @@ public class Player_Stage2 : MonoBehaviour
                 Vector3 nextVec = rayHit.point;
                 nextVec.y = 15;
 
-                // 인스턴트 수류탄 생성
                 GameObject instantGrenade = Instantiate(grenadeObj, transform.position, transform.rotation);
                 Rigidbody rigidGrenade = instantGrenade.GetComponent<Rigidbody>();
                 rigidGrenade.AddForce(nextVec, ForceMode.Impulse);
@@ -176,6 +188,8 @@ public class Player_Stage2 : MonoBehaviour
                 hasGrenades--;
                 grenades[hasGrenades].SetActive(false);
             }
+
+            // soundControl.ThrowSound.Play();
         }
     }
 
@@ -188,13 +202,12 @@ public class Player_Stage2 : MonoBehaviour
         fireDelay += Time.deltaTime;
         isFireReady = equipWeapon.rate < fireDelay;
 
-        if (fDown && isFireReady && !isDodge && !isSwap)
+        if (fDown && isFireReady && !isDodge && !isSwap && !isShop && !isDead)
         {
             equipWeapon.Use();
             anim.SetTrigger(equipWeapon.type == Weapon.Type.Melee ? "doSwing" : "doShot");
             fireDelay = 0;
         }
-
     }
 
     void Reload()
@@ -203,36 +216,40 @@ public class Player_Stage2 : MonoBehaviour
             return;
         if (equipWeapon.type == Weapon.Type.Melee)
             return;
-        if (ammo == 0)
+        if (ammo == 0 || equipWeapon.curAmmo == equipWeapon.maxAmmo)
             return;
 
-        if (rDown && !isJump && !isDodge && !isSwap && isFireReady)
+        if (reDown && !isJump && !isDodge && !isSwap && isFireReady && !isShop && !isDead)
         {
             anim.SetTrigger("doReload");
             isReload = true;
 
-            Invoke("ReloadOut", 2f);
+            // Invoke("ReloadOut", 2f); -> 애니메이션 기능에 ReloadOut() 기능 구현했습니다.
         }
     }
 
-    void ReloadOut()
+    public void ReloadOut()
     {
-        int reAmmo = ammo < equipWeapon.maxAmmo ? ammo : equipWeapon.maxAmmo;
-        equipWeapon.curAmmo = reAmmo;
+        int reAmmo = equipWeapon.maxAmmo - equipWeapon.curAmmo;
+        reAmmo = ammo < reAmmo ? ammo : reAmmo;
+
+        equipWeapon.curAmmo += reAmmo;
         ammo -= reAmmo;
         isReload = false;
     }
 
     void Dodge()
     {
-        if (jDown && moveVec != Vector3.zero && !isJump && !isDodge && !isSwap)
+        // 이동하면서 점프할때, 
+        if (jDown && moveVec != Vector3.zero && !isJump && !isDodge && !isShop && !isDead)
         {
             dodgeVec = moveVec;
             speed *= 2;
             anim.SetTrigger("doDodge");
             isDodge = true;
 
-            Invoke("DodgeOut", 0.5f);
+            Invoke("DodgeOut", 0.5f); // 시간지연 라이브러리 기능
+            // soundControl.dodgeSound.Play();
         }
     }
 
@@ -244,7 +261,6 @@ public class Player_Stage2 : MonoBehaviour
 
     void Swap()
     {
-        // 인벤토리에 무기가 없다면 실행 안되고, 똑같은 무기는 꺼낼 수 없습니다.
         if (sDown1 && (!hasWeapons[0] || equipWeaponIndex == 0))
             return;
         if (sDown2 && (!hasWeapons[1] || equipWeaponIndex == 1))
@@ -258,7 +274,7 @@ public class Player_Stage2 : MonoBehaviour
         if (sDown3) weaponIndex = 2;
 
         // 1, 2 ,3 버튼 누를때
-        if ((sDown1 || sDown2 || sDown3) && !isJump && !isDodge)
+        if ((sDown1 || sDown2 || sDown3) && !isJump && !isDodge && !isShop && !isDead)
         {
             if (equipWeapon != null)
                 equipWeapon.gameObject.SetActive(false);
@@ -276,7 +292,6 @@ public class Player_Stage2 : MonoBehaviour
 
         }
     }
-
     void SwapOut()
     {
         isSwap = false;
@@ -284,7 +299,7 @@ public class Player_Stage2 : MonoBehaviour
 
     void Interation()
     {
-        if (iDown && nearObject != null && !isJump && !isDodge)
+        if (iDown && nearObject != null && !isJump && !isDodge && !isDead)
         {
             if (nearObject.tag == "Weapon")
             {
@@ -294,18 +309,27 @@ public class Player_Stage2 : MonoBehaviour
 
                 Destroy(nearObject);
             }
+            else if (nearObject.tag == "Shop")
+            {
+                Shop shop = nearObject.GetComponent<Shop>();
+                shop.Enter(this);
+                isShop = true;
+            }
+            // soundControl.InteractSound.Play();
         }
+
     }
 
     void FreezeRotation()
     {
         rigid.angularVelocity = Vector3.zero;
+
     }
 
     void StopToWall()
     {
         // DrawRay() : Scene내에 Ray를 보여주는 함수
-        // Debug.DrawRay(transform.position, transform.forward * 5, Color.green);
+        //Debug.DrawRay(transform.position, transform.forward * 5, Color.green);
         isBorder = Physics.Raycast(transform.position, transform.forward, 3, LayerMask.GetMask("Wall"));
     }
 
@@ -315,15 +339,17 @@ public class Player_Stage2 : MonoBehaviour
         StopToWall();
     }
 
+    // 충돌 시 이벤트 함수로 착지 구현
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Floor")
         {
-            anim.SetBool("isJump", false);
             isJump = false;
+            anim.SetBool("isJump", false);
         }
     }
 
+    // 아이템 획득
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Item")
@@ -349,16 +375,12 @@ public class Player_Stage2 : MonoBehaviour
                 case Item.Type.Grenade:
                     if (hasGrenades == maxHasGrenades)
                         return;
-
                     grenades[hasGrenades].SetActive(true);
-
                     hasGrenades += item.value;
-                    if (hasGrenades > maxHasGrenades)
-                        hasGrenades = maxHasGrenades;
-
                     break;
             }
             Destroy(other.gameObject);
+            // soundControl.InteractSound.Play();
         }
         else if (other.tag == "EnemyBullet")
         {
@@ -373,7 +395,11 @@ public class Player_Stage2 : MonoBehaviour
 
             if (other.GetComponent<Rigidbody>() != null)
                 Destroy(other.gameObject);
+
+            // soundControl.playerOnDamageSound.Play();
         }
+
+
     }
 
     IEnumerator OnDamage(bool isBossAtk)
@@ -387,6 +413,9 @@ public class Player_Stage2 : MonoBehaviour
         if (isBossAtk)
             rigid.AddForce(transform.forward * -25, ForceMode.Impulse);
 
+        if (health <= 0 && !isDead)
+            OnDie();
+
         yield return new WaitForSeconds(1f);
 
         isDamage = false;
@@ -398,18 +427,32 @@ public class Player_Stage2 : MonoBehaviour
         if (isBossAtk)
             rigid.velocity = Vector3.zero;
 
+
+
     }
 
-    void OnTriggerStay(Collider other)
+    void OnDie()
     {
-        if (other.tag == "Weapon")
-            nearObject = other.gameObject;
-        // Debug.Log(nearObject.name);
+        anim.SetTrigger("doDie");
+        isDead = true;
+        gamemanager.GameOver();
     }
 
-    void OnTriggerExit(Collider other)
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Weapon" || other.tag == "Shop")
+            nearObject = other.gameObject;
+    }
+    private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Weapon")
             nearObject = null;
+        else if (other.tag == "Shop")
+        {
+            Shop shop = nearObject.GetComponent<Shop>();
+            shop.Exit();
+            isShop = false;
+            nearObject = null;
+        }
     }
 }
