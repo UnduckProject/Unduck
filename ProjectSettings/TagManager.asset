@@ -13,6 +13,14 @@ TagManager:
   - brokenGround
   - PlayerWeapon
   - Monster
+  - Wall
+  - EnemyBullet
+  - Bullet
+  - Weapon
+  - Enemy
+  - Item
+  - Melee
+  - Shop
   layers:
   - Default
   - TransparentFX

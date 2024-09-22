@@ -9,9 +9,13 @@ public class Enemy : MonoBehaviour
     public Type enemyType;
     public int maxHealth;
     public int curHealth;
+    public int score;
+    public GameManager1 manager;
     public Transform Target;
     public BoxCollider melleArea;
     public GameObject bullet;
+    public GameObject[] coins;
+
     public bool isChase;
     public bool isAttack;
     public bool isDead;
