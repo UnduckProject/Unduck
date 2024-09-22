@@ -12,7 +12,6 @@ public class realFinalStoryManager : MonoBehaviour
     public TMP_Text pressAText;
     public GameObject Boss;
     public GameObject BigBoss;
-    private CameraShake cameraShake;
     private AudioSource audioSource;
     
 
@@ -28,8 +27,6 @@ public class realFinalStoryManager : MonoBehaviour
     private Coroutine alertSoundCoroutine;
     void Start()
     {
-        cameraShake = cameraObject.GetComponent<CameraShake>();
-        cameraShake.TriggerShake();
         ShowNextLine();
         pressAText.gameObject.SetActive(true);
         StartCoroutine(AnimatePressAText());
@@ -55,7 +52,6 @@ public class realFinalStoryManager : MonoBehaviour
         {
             gameObject.SetActive(false);
             pressAText.gameObject.SetActive(false);
-            cameraShake.StopShake();
             Boss.SetActive(false);
             BigBoss.SetActive(true);
             ObjectSpawn.SetActive(true);

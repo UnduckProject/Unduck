@@ -29,8 +29,7 @@ public class NPCAreaController : MonoBehaviour
     {
         Quest.SetActive(false);
         if (other.gameObject.tag == "Player" && !GameData.HasTalked1)
-        {
-            
+        {   
             if (dialogueManager != null)
             {
                 Quest.SetActive(false);

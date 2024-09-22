@@ -10,6 +10,7 @@ public class FinalStoryManager : MonoBehaviour
     
     public TMP_Text storyText; 
     public TMP_Text pressAText;
+    public GameObject mazeText;
     
     private string [] storyLines = {
         "아..아.. 이제 알았다 너의 진심",
@@ -41,7 +42,7 @@ public class FinalStoryManager : MonoBehaviour
         {
             gameObject.SetActive(false);
             pressAText.gameObject.SetActive(false);
-            
+            mazeText.gameObject.SetActive(false);
             ObjectSpawn.SetActive(true);
         }
     }

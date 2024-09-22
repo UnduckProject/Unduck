@@ -3,17 +3,18 @@ using UnityEngine.UI;
 
 public class PlayerHpBar : MonoBehaviour
 {
-    private Slider hpbar;
+    public Slider hpSlider;
 
     void Start()
     {
-        hpbar = GetComponent<Slider>();
-        hpbar.value = 1; 
+        hpSlider = GetComponent<Slider>();
+        hpSlider.value = 1; 
     }
-
     public void UpdateHp(float normalizedHp)
     {
-        hpbar.value = normalizedHp; 
+        if (hpSlider != null)
+        {
+            hpSlider.value = normalizedHp; 
+        }
     }
-
 }

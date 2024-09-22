@@ -5,11 +5,11 @@ using System.Collections;
 
 public class NextSceneLoader : MonoBehaviour
 {
-    public Button quitButton;
+    public Button NextButton;
 
     public void LoadFirstScene()
     {
-        if (quitButton.interactable)
+        if (NextButton.interactable)
         {
             StartCoroutine(LoadSceneAfterDelay());
         }
