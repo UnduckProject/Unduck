@@ -51,13 +51,13 @@ public class realFinalObjectSpawner : MonoBehaviour {
     do {
         
         spawnPosition = new Vector3(
-            player.position.x + Random.Range(-10f, 10f),
+            player.position.x + Random.Range(-15f, 15f),
             player.position.y + Random.Range(0f, 5f), 
-            player.position.z + Random.Range(-10f, 10f)
+            player.position.z + Random.Range(-15f, 15f)
         );
     } while (spawnPosition.x > -10 && spawnPosition.x < 15 && spawnPosition.z > -10 && spawnPosition.z < 15);
 
-    monsterSpawnPosition = spawnPosition + new Vector3(-8f, -8f, -8f);
+    monsterSpawnPosition = spawnPosition + new Vector3(0, -7f,0);
     
     GameData.FirstBossTransform = monsterSpawnPosition;
 
