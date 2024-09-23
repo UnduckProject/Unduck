@@ -25,6 +25,7 @@ TagManager:
   - playerattack
   - hammer
   - MazeWall
+  - Mole
   layers:
   - Default
   - TransparentFX
