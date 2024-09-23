@@ -23,6 +23,8 @@ TagManager:
   - Shop
   - ball
   - playerattack
+  - hammer
+  - MazeWall
   layers:
   - Default
   - TransparentFX
