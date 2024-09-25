@@ -340,21 +340,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 100000, guid: d93bc5bf0eeb6fb4eb9b30ceabe8430d, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: d93bc5bf0eeb6fb4eb9b30ceabe8430d, type: 3}
       propertyPath: m_Name
       value: greenh
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: d93bc5bf0eeb6fb4eb9b30ceabe8430d, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: d93bc5bf0eeb6fb4eb9b30ceabe8430d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.05
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: d93bc5bf0eeb6fb4eb9b30ceabe8430d, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.05
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: d93bc5bf0eeb6fb4eb9b30ceabe8430d, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.05
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: d93bc5bf0eeb6fb4eb9b30ceabe8430d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -420,6 +428,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100002, guid: d93bc5bf0eeb6fb4eb9b30ceabe8430d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7079831761592397404}
+    - targetCorrespondingSourceObject: {fileID: 100002, guid: d93bc5bf0eeb6fb4eb9b30ceabe8430d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -5806853899614813343}
   m_SourcePrefab: {fileID: 100100000, guid: d93bc5bf0eeb6fb4eb9b30ceabe8430d, type: 3}
 --- !u!33 &6969400401439927146 stripped
 MeshFilter:
@@ -479,6 +490,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.33779, y: 3.055613, z: 4.991021}
   m_Center: {x: 0.0356853, y: 1.5278065, z: 0.00000047683716}
+--- !u!114 &-5806853899614813343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6969400401442994024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3e18f9935c31d2469c54a6fbd08f377, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  danseo: {fileID: 6969400401442994024}
 --- !u!4 &6969400401443351368 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: d93bc5bf0eeb6fb4eb9b30ceabe8430d, type: 3}
