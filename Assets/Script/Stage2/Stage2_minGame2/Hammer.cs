@@ -10,6 +10,8 @@ public class Hammer : MonoBehaviour
     [SerializeField]
     private GameObject moleHitEffectPrefab;
     [SerializeField]
+    private GameController gameController;
+    [SerializeField]
     private ObjectDetector objectDetector;
     private Movement3D movement3D;
 
@@ -34,6 +36,8 @@ public class Hammer : MonoBehaviour
             GameObject clone = Instantiate(moleHitEffectPrefab, transform.position, Quaternion.identity);
             ParticleSystem.MainModule main = clone.GetComponent<ParticleSystem>().main;
             main.startColor = mole.GetComponent<MeshRenderer>().material.color;
+
+            gameController.Score += 50;
 
             StartCoroutine("MoveUp");
         }
