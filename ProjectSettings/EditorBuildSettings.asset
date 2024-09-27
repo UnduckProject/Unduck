@@ -5,30 +5,33 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/CommonStage/NewMenu.unity
     guid: c7ade1f69b815334ab6b1ba5ea1a831b
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/CommonStage/GameOver.unity
     guid: c2f012464d4a4544e86b339b29a381b8
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/CommonStage/Loading.unity
     guid: fda9f697540864644a9689bf9f842d36
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Stage1/Stage1.unity
     guid: 96ada3154cb57b84aa788e392c0f6ab3
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Stage1/Stage1_Minigame.unity
     guid: f9b695bca88fdce4590dd0e93a58f212
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Stage1/MR_TEST.unity
     guid: 6d03887ca9249e74993df27ffd8b3f1a
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Stage1/Stage1_PassThrough 1.unity
     guid: eb48925231135a14da86ac1abf94cfc6
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Stage1/Stage1_Final.unity
     guid: 1679b7141ed91fc45ba602f3ebd15ab0
+  - enabled: 1
+    path: Assets/Scenes/Stage1/MR_TEST 1.unity
+    guid: f3c2be104f9dcc1439ff39491f85f396
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 3fddb3ba23070be41a7507fcfd88a78c, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 36608d62b61c079469a8fa64d3654b83, type: 2}

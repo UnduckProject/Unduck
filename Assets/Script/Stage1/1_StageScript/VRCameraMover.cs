@@ -32,7 +32,9 @@ public class VRCameraMover : MonoBehaviour
         }
         else if (isMoving && GameData.GameProgress == 1)
         {
-            MoveTowards(target2);
+            if(GameData.winMsg1){
+                MoveTowards(target2);
+            }
         }
 
         if (isOrg)

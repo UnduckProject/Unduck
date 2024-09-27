@@ -30,12 +30,12 @@ public class NPCAreaController : MonoBehaviour
         Quest.SetActive(false);
         if (other.gameObject.tag == "Player" && !GameData.HasTalked1)
         {   
+            GameData.HasTalked1=true;
             if (dialogueManager != null)
             {
                 Quest.SetActive(false);
                 cameraMover.StartMoving();
                 dialogueManager.StartDialogue();
-                GameData.HasTalked1=true;
                 GameData.DuckTransform=transform.position;
             }
         }
@@ -43,11 +43,13 @@ public class NPCAreaController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        GameData.Win=false;
         if(other.gameObject.tag == "Player" && !GameData.HasTalked1)
         {
             Quest.SetActive(true);
             cameraMover.StartOrgMoving();
             dialogueManager.StopDialogue();
+            
         }
 
 

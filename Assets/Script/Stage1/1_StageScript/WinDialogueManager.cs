@@ -56,6 +56,16 @@ public class WinDialogueManager : MonoBehaviour
         if (currentDialogueIndex >= dialogues.Count)
         {
             panel.SetActive(false);
+            if(GameData.GameProgress==1)
+            {
+                GameData.winMsg1 = true;
+                GameData.winMsgOn=false;
+            }
+            else if(GameData.GameProgress==2)
+            {
+                GameData.winMsg2 = true;
+                GameData.winMsgOn=false;
+            }
 
             if (cameraMover != null)
             {

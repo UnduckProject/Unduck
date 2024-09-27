@@ -42,6 +42,7 @@ public class GoalManager : MonoBehaviour
 
         if (remainingGoals <= 0)
         {
+            GameData.Win=true;
             GameData.GameProgress=1;
             StartCoroutine(VictoryDelay());
         }

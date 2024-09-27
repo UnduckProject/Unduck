@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ResetGameData : MonoBehaviour
 {
-    void Awake()
+    void Start()
     {
         GameData.ResetGameData();
     }

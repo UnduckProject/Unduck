@@ -5,11 +5,12 @@ using UnityEngine;
 public class HammerCrash : MonoBehaviour
 {
     public GameObject hammer;
-    private int naegudo;
+    private int naegudo=6;
 
     void Start()
     {
-        int naegudo = 6;
+       int naegudo=6;
+
     }
 
     void Update()

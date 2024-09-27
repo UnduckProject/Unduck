@@ -26,6 +26,7 @@ TagManager:
   - hammer
   - MazeWall
   - Mole
+  - Danseo
   layers:
   - Default
   - TransparentFX

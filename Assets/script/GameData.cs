@@ -14,6 +14,9 @@ public class GameData
     public static bool NpcTarget = false;
     public static bool winMsg1 = false;
     public static bool winMsg2 = false;
+    public static bool winMsgOn = false;
+    public static bool Win = false;
+    public static int Winprogress =0;
 
     public static void ResetGameData()
     {
@@ -29,5 +32,8 @@ public class GameData
         NpcTarget = false;
         winMsg1 = false;
         winMsg2 = false;
+        winMsgOn = false;
+        Winprogress =0;
+        Win = false;
     }
 }
