@@ -6145,7 +6145,7 @@ MonoBehaviour:
       m_Calls: []
   EnableWorldLock: 1
   SceneSettings:
-    DataSource: 0
+    DataSource: 2
     RoomIndex: -1
     RoomPrefabs:
     - {fileID: 5618556046422172173, guid: 4b454e8ccd6764ccdbcd91586969863f, type: 3}
@@ -12352,7 +12352,7 @@ MonoBehaviour:
   SpawnOnStart: 1
   SeedValue: 0
   PrefabsToSpawn:
-  - Labels: 1
+  - Labels: 777
     Prefabs:
     - {fileID: 557499672922008630, guid: fe097186833a74b4b8912f1373a0d060, type: 3}
     PrefabSelection: 0
