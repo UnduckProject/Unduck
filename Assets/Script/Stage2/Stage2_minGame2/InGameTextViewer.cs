@@ -12,6 +12,8 @@ public class InGameTextViewer : MonoBehaviour
     private TextMeshProUGUI textPlayTime;
     [SerializeField]
     private Slider sliderPlayTime;
+    [SerializeField]
+    private TextMeshProUGUI textCombo;
 
     private void Update()
     {
@@ -19,5 +21,7 @@ public class InGameTextViewer : MonoBehaviour
 
         textPlayTime.text = gameController.CurrentTime.ToString("F1");
         sliderPlayTime.value = gameController.CurrentTime / gameController.MaxTime;
+
+        textCombo.text = "Combo" + gameController.Combo;
     }
 }

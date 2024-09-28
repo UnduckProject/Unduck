@@ -2,9 +2,12 @@ using System.Collections;
 using UnityEngine;
 
 public enum MoleState { UnderGround = 0, OnGround, MoveUp, MoveDown}
+public enum MoleType { Normal = 0, Red, Blue}
 
 public class MoleFSM : MonoBehaviour
 {
+    [SerializeField]
+    private GameController gameController;
     [SerializeField]
     private float waitTimeOnGround;
     [SerializeField]
@@ -13,12 +16,43 @@ public class MoleFSM : MonoBehaviour
     private float limitMaxY;
 
     private Movement3D movement3D;
+    private MeshRenderer meshRenderer;
+
+    private MoleType moleType;
+    private Color defaultColor;
 
     public MoleState MoleState { private set; get; }
+    public MoleType MoleType
+    {
+        set
+        {
+            moleType = value;
+
+            switch (moleType)
+            {
+                case MoleType.Normal:
+                    meshRenderer.material.color = defaultColor;
+                    break;
+                case MoleType.Red:
+                    meshRenderer.material.color = Color.red;
+                    break;
+                case MoleType.Blue:
+                    meshRenderer.material.color = Color.blue;
+                    break;
+            }
+        }
+        get => moleType;
+    }
+
+    [field: SerializeField]
+    public int MoleIndex { private set; get; }
 
     private void Awake()
     {
         movement3D = GetComponent<Movement3D>();
+        meshRenderer = GetComponent<MeshRenderer>();
+
+        defaultColor = meshRenderer.material.color;
 
         ChangeState(MoleState.UnderGround);
     }
@@ -69,10 +103,18 @@ public class MoleFSM : MonoBehaviour
         {
             if(transform.position.y <= limitMinY)
             {
-                ChangeState(MoleState.UnderGround);
+                // ChangeState(MoleState.UnderGround);
+                break;
             }
 
             yield return null;
         }
+
+        if (moleType == MoleType.Normal)
+        {
+            gameController.Combo = 0;
+        }
+
+        ChangeState(MoleState.UnderGround);
     }
 }
