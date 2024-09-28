@@ -4,20 +4,27 @@ using UnityEngine;
 public class Hammer : MonoBehaviour
 {
     [SerializeField]
-    private float maxY;
+    private float           maxY;
     [SerializeField]
-    private float minY;
+    private float           minY;
     [SerializeField]
-    private GameObject moleHitEffectPrefab;
+    private GameObject      moleHitEffectPrefab;
     [SerializeField]
-    private GameController gameController;
+    private AudioClip[]     audioClips;
     [SerializeField]
-    private ObjectDetector objectDetector;
-    private Movement3D movement3D;
+    private MoleHitTextViewer[] moleHitTextViewer;
+    [SerializeField]
+    private GameController  gameController;
+    [SerializeField]
+    private ObjectDetector  objectDetector;
+    private Movement3D      movement3D;
+    private AudioSource     audioSource;
 
     private void Awake()
     {
         movement3D = GetComponent<Movement3D>();
+        audioSource = GetComponent<AudioSource>();
+
         objectDetector.raycastEvent.AddListener(OnHit);
     }
 
@@ -37,7 +44,8 @@ public class Hammer : MonoBehaviour
             ParticleSystem.MainModule main = clone.GetComponent<ParticleSystem>().main;
             main.startColor = mole.GetComponent<MeshRenderer>().material.color;
 
-            gameController.Score += 50;
+            // gameController.Score += 50;
+            MoleHitProcess(mole);
 
             StartCoroutine("MoveUp");
         }
@@ -56,5 +64,43 @@ public class Hammer : MonoBehaviour
             }
             yield return null;
         }
+    }
+
+    private void MoleHitProcess(MoleFSM mole)
+    {
+        if (mole.MoleType == MoleType.Normal)
+        {
+            gameController.Combo++;
+            // gameController.Score += 50;
+            float scoreMultiple = 1 + gameController.Combo / 10 * 0.5f;
+            int getScore = (int)(scoreMultiple * 50);
+
+            gameController.Score += getScore;
+
+            moleHitTextViewer[mole.MoleIndex].OnHit("Score +" + getScore, Color.white);
+        }
+
+        else if (mole.MoleType == MoleType.Red)
+        {
+            gameController.Combo = 0;
+            gameController.Score -= 300;
+            moleHitTextViewer[mole.MoleIndex].OnHit("Score -300", Color.red);
+        }
+
+        else if (mole.MoleType == MoleType.Blue)
+        {
+            gameController.Combo++;
+            gameController.CurrentTime += 3;
+            moleHitTextViewer[mole.MoleIndex].OnHit("Time +3", Color.blue);
+        }
+
+        PlaySound((int)mole.MoleType);
+    }
+
+    private void PlaySound(int index)
+    {
+        audioSource.Stop();
+        audioSource.clip = audioClips[index];
+        audioSource.Play();
     }
 }
