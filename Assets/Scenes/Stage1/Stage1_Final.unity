@@ -1262,7 +1262,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -29970,7 +29970,7 @@ MonoBehaviour:
   monsterSound: {fileID: 8300000, guid: b4da09c5f2f123943862c1c759884c03, type: 3}
   spawnInterval: 6
   spawnArea: {x: 19, y: 20, z: 19}
-  player: {fileID: 45986100}
+  player: {fileID: 899799889}
   PlayerHp: {fileID: 604958027}
   BossHp: {fileID: 1840222055}
 --- !u!1 &1033974758 stripped

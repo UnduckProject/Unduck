@@ -3,7 +3,7 @@ using UnityEngine;
 public class FallingDetection : MonoBehaviour
 {
     public Transform centerEye; 
-    public float checkDistance = 2f; 
+    public float checkDistance = 1f; 
 
     void Update()
     {

@@ -17,7 +17,7 @@ public class testtrigger : MonoBehaviour
     }
      public void LoadNextScene()
     {
-        GameData.LoadSceneName="Stage1_PassThrough 1";
+        GameData.LoadSceneName="Stage1_Final";
         SceneManager.LoadScene("Loading");
     }
 

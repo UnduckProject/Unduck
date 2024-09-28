@@ -10,9 +10,19 @@ public class Ghost : MonoBehaviour
         GameObject cameraRig = GameObject.Find("OVRCameraRig");
         if (cameraRig != null)
         {
-            target = cameraRig.transform;
+            Transform trackingSpace = cameraRig.transform.Find("TrackingSpace");
+            if (trackingSpace != null)
+            {
+                target = trackingSpace.Find("CenterEyeAnchor");
+            }
         }
-    }
+
+
+        if (target == null)
+        {
+            Debug.LogWarning("CenterEyeAnchor를 찾을 수 없습니다. 타겟이 null입니다.");
+        }
+}
     void Update()
     {
         if (target != null)
@@ -29,13 +39,11 @@ public class Ghost : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("PlayerWeapon"))
         {
-            //정신력 감소
             Destroy(gameObject);
         }
-
-        else if (other.CompareTag("PlayerWeapon"))
+        else if(other.CompareTag("Player"))
         {
             Destroy(gameObject);
         }

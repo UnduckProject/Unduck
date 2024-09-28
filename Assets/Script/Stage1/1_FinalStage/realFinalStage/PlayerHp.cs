@@ -14,12 +14,13 @@ public class PlayerHp : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         
-        if (collision.gameObject.CompareTag("attack"))
+        if (other.gameObject.CompareTag("attack"))
         {
             TakeDamage(25); 
+            
         }
     }
 
