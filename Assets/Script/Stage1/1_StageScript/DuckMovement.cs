@@ -24,6 +24,7 @@ public class DuckMovement : MonoBehaviour
 
     void Start()
     {
+        
         anim = GetComponent<Animator>();
         cc = GetComponent<CharacterController>(); audioSource = GetComponent<AudioSource>();
         if(GameData.GameProgress == 1 || GameData.GameProgress == 2)

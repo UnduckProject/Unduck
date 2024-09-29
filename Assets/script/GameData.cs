@@ -9,6 +9,7 @@ public class GameData
     public static float FirstBossHP = 100;
     public static float FirstPlayerHP=100;
     public static Vector3 DuckTransform;
+    public static Vector3 BeforeDuckTransform = new Vector3(-41.0f, 20.0f, -14.0f);
     public static bool HasTalked1 = false;
     public static bool HasTalked2 = false;
     public static bool HasTalked3 = false;
@@ -18,6 +19,8 @@ public class GameData
     public static bool winMsg2 = false;
     public static bool winMsgOn = false;
     public static bool Win = false;
+    public static bool returnTo=false;
+    public static bool minigameOn=false;
     public static int Winprogress =0;
 
     public static void ResetGameData()
@@ -29,6 +32,7 @@ public class GameData
         FirstBossHP = 100;
         FirstPlayerHP=100;
         DuckTransform = Vector3.zero;
+        BeforeDuckTransform = Vector3.zero;
         HasTalked1 = false;
         HasTalked2 = false;
         HasTalked3 = false;
@@ -36,7 +40,9 @@ public class GameData
         NpcTarget = false;
         winMsg1 = false;
         winMsg2 = false;
+        returnTo=false;
         winMsgOn = false;
+        minigameOn=false;
         Winprogress =0;
         Win = false;
     }

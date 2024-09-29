@@ -14,6 +14,8 @@ public class returnToStage : MonoBehaviour
         {
             if(GameData.GameProgress==0)
             {
+                GameData.minigameOn=true;
+                GameData.returnTo=true;
                 GameData.HasTalked1=false;
             }
             else if(GameData.GameProgress==1)
@@ -24,6 +26,7 @@ public class returnToStage : MonoBehaviour
             {
                 GameData.HasTalked3=false;
             }
+            GameData.DuckTransform=GameData.BeforeDuckTransform;
             StartCoroutine(LoadSceneAfterDelay());
         }
     }

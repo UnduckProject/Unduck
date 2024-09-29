@@ -27,6 +27,29 @@ public class GoalManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    void OnEnable()
+    {
+        Initialize();
+    }
+
+    public void Initialize()
+    {
+        goalCountText = GameObject.Find("WristText").GetComponent<TMP_Text>();
+        totalGoals = 0; 
+        remainingGoals = 0; 
+        UpdateGoalCountText();
+    }
+
+    void Update()
+    {
+        if(OVRInput.GetDown(OVRInput.Button.Start))
+        {
+            if(GameData.minigameOn)
+                GameData.minigameOn=false;
+            else
+                GameData.minigameOn=true;
+        }
+    }
 
     public void RegisterGoal()
     {
@@ -40,7 +63,7 @@ public class GoalManager : MonoBehaviour
         remainingGoals--;
         UpdateGoalCountText();
 
-        if (remainingGoals <= 0)
+        if (remainingGoals <= 0 && !GameData.minigameOn)
         {
             GameData.Win=true;
             GameData.GameProgress=1;

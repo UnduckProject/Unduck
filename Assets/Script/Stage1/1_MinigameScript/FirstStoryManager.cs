@@ -17,7 +17,7 @@ public class FirstStoryManager : MonoBehaviour
 
     void Start()
     {
-        GameData.GameProgress=1;
+        
         ShowNextLine();
         pressAText.gameObject.SetActive(true);
         StartCoroutine(AnimatePressAText());

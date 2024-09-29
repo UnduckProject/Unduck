@@ -26,7 +26,6 @@ public class FinalStoryManager : MonoBehaviour
     void Start()
     {
         
-        GameData.GameProgress=3;
         ShowNextLine();
         GameData.isBoss=true;
         pressAText.gameObject.SetActive(true);
