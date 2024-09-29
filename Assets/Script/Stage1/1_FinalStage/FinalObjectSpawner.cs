@@ -17,6 +17,8 @@ public class FinalObjectSpawner : MonoBehaviour {
     public float timer = 1f; 
     private bool isSpawning = true;
 
+    private GameObject currentMonster; 
+
     private void Start() {
         InvokeRepeating("SpawnObject", 0, spawnInterval);
         timerText.gameObject.SetActive(true);
@@ -31,8 +33,13 @@ public class FinalObjectSpawner : MonoBehaviour {
                 isSpawning = false;
                 CancelInvoke("SpawnObject"); 
                 timerText.text = "시간 종료!";
+                
+                
+                if (currentMonster != null) {
+                    Destroy(currentMonster);
+                }
+
                 SceneManager.LoadScene("GameOver");
- 
             }
         }
     }
@@ -44,23 +51,23 @@ public class FinalObjectSpawner : MonoBehaviour {
     }
 
     private IEnumerator SpawnWithDelay() {
-         Vector3 spawnPosition;
+        Vector3 spawnPosition;
         do {
             spawnPosition = new Vector3(
                 Random.Range(-3, spawnArea.x),
                 Random.Range(18, spawnArea.y), 
                 Random.Range(-3, spawnArea.z)
             );
-    } while (spawnPosition.x > 0 && spawnPosition.x < 10 && spawnPosition.z > 0 && spawnPosition.z < 10);
+        } while (spawnPosition.x > 0 && spawnPosition.x < 10 && spawnPosition.z > 0 && spawnPosition.z < 10);
 
         Vector3 monsterSpawnPosition = new Vector3(spawnPosition.x - 1.5f, spawnPosition.y - 2.5f, spawnPosition.z);
 
-        GameObject monster = Instantiate(monsterPrefab, monsterSpawnPosition, Quaternion.identity);
+        currentMonster = Instantiate(monsterPrefab, monsterSpawnPosition, Quaternion.identity); 
         AudioSource.PlayClipAtPoint(monsterSound, monsterSpawnPosition);
 
         Vector3 directionToPlayer = (player.position - monsterSpawnPosition).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(directionToPlayer);
-        monster.transform.rotation = lookRotation;
+        currentMonster.transform.rotation = lookRotation;
 
         yield return new WaitForSeconds(2f);
 
@@ -73,7 +80,7 @@ public class FinalObjectSpawner : MonoBehaviour {
         Vector3 direction = (player.position - spawnPosition).normalized;
         rb.AddForce(direction * 25f, ForceMode.Impulse);
 
-        Destroy(monster, 1f);
+        Destroy(currentMonster, 1f); 
     }
 
     public void SubtractTime(float amount) {

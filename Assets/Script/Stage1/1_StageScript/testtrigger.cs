@@ -6,11 +6,20 @@ using UnityEngine.SceneManagement;
 
 public class testtrigger : MonoBehaviour
 {
+    public GameObject Portal;
+    public GameObject Ghost;
+    void Update()
+    {
+        if(GameData.GameProgress==3){
+            Portal.SetActive(false);
+            Ghost.SetActive(true);
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && GameData.GameProgress==2)
         {
-            GameManager.Instance.SavePlayerPosition(transform.position);
+            GameData.DuckTransform=transform.position;
             LoadNextScene();
         }
         

@@ -73,6 +73,12 @@ void Start()
             GameData.LoadSceneName="Stage1_PassThrough 1";
             SceneManager.LoadScene(sceneName);
         }
+        else if(currentDialogueIndex >= dialogues.Count && GameData.GameProgress == 3)
+        {
+            panel.SetActive(false); 
+            GameData.LoadSceneName="MR_TEST 1";
+            SceneManager.LoadScene(sceneName);
+        }
         else
         {
             dialogueText.text = dialogues[currentDialogueIndex];

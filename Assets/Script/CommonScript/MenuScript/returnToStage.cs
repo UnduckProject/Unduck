@@ -20,6 +20,10 @@ public class returnToStage : MonoBehaviour
             {
                 GameData.HasTalked2=false;
             }
+            else if(GameData.GameProgress==3)
+            {
+                GameData.HasTalked3=false;
+            }
             StartCoroutine(LoadSceneAfterDelay());
         }
     }

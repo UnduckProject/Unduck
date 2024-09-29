@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI; 
 using System.Collections; 
 using UnityEngine.SceneManagement;
 
 public class MRStageManager : MonoBehaviour
 {
+    public Slider PlayerHp;
     private int Danseo;
     public AudioSource audioSource;
 
@@ -21,6 +23,12 @@ public class MRStageManager : MonoBehaviour
         if(Danseo==10)
         {
             StartCoroutine(VictoryDelay());
+        }
+        
+        if(PlayerHp.value<=0)
+        {
+            GameData.FirstPlayerHP=100;
+            SceneManager.LoadScene("Stage1");
         }
         
     }

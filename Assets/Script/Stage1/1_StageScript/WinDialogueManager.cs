@@ -9,7 +9,7 @@ public class WinDialogueManager : MonoBehaviour
 {
     public List<string> dialogues; 
     private int currentDialogueIndex = 0; 
-
+    public GameObject NewArea;
     public VRCameraMover cameraMover;
     public GameObject panel; 
     public TMP_Text dialogueText; 
@@ -65,6 +65,7 @@ public class WinDialogueManager : MonoBehaviour
             {
                 GameData.winMsg2 = true;
                 GameData.winMsgOn=false;
+                NewArea.SetActive(true);
             }
 
             if (cameraMover != null)

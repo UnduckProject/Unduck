@@ -5,7 +5,8 @@ using UnityEngine;
 public class VRCameraMover : MonoBehaviour
 {
     public Transform target1;
-    public Transform target2; 
+    public Transform target2;
+    public Transform target3; 
     public float speed = 2.0f; 
     public Transform resetPosition;
     
@@ -22,6 +23,10 @@ public class VRCameraMover : MonoBehaviour
         {
             transform.position = target2.position;
         }
+        else if(GameData.GameProgress==3)
+        {
+            transform.position = target3.position;
+        }
     }
 
     void Update()
@@ -35,6 +40,10 @@ public class VRCameraMover : MonoBehaviour
             if(GameData.winMsg1){
                 MoveTowards(target2);
             }
+        }
+        else if(isMoving && GameData.GameProgress == 3)
+        {
+            MoveTowards(target3);
         }
 
         if (isOrg)

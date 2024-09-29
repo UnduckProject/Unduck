@@ -26,7 +26,9 @@ public class realFinalObjectSpawner : MonoBehaviour {
     private void Update() { 
         if (BossHp.value <= 0) {
             isSpawning = false;
+            GameData.FirstPlayerHP=100;
             CancelInvoke("SpawnObject"); 
+            GameData.GameProgress=3;
             SceneManager.LoadScene("Stage1");
         }
 

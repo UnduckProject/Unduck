@@ -55,7 +55,7 @@ public class FinalGoalManager : MonoBehaviour
             goalCountText.gameObject.SetActive(false);
             MazeMap.gameObject.SetActive(false);
             ObjectSpawn.gameObject.SetActive(false);
-
+            GameData.isBoss=false;
             RealFinalStage.gameObject.SetActive(true);
         }
     }

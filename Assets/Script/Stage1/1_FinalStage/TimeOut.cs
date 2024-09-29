@@ -10,11 +10,12 @@ public class TimeOut : MonoBehaviour
     {
         finalobjectspawner = FindObjectOfType<FinalObjectSpawner>();
     }
-   private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             finalobjectspawner.SubtractTime(10f);
+            Destroy(collision.gameObject);
         }
     }
 

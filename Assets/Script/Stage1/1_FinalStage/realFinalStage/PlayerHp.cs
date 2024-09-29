@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class PlayerHp : MonoBehaviour
 {
-    public float curHp = 100; 
     public float maxHp = 100; 
     public PlayerHpBar hpBar; 
 
@@ -10,7 +9,7 @@ public class PlayerHp : MonoBehaviour
     {
         if (hpBar != null)
         {
-            hpBar.UpdateHp(curHp / maxHp); 
+            hpBar.UpdateHp(GameData.FirstPlayerHP / maxHp); 
         }
     }
 
@@ -20,18 +19,18 @@ public class PlayerHp : MonoBehaviour
         if (other.gameObject.CompareTag("attack"))
         {
             TakeDamage(25); 
-            
+            Destroy(other.gameObject);
         }
     }
 
     public void TakeDamage(float damage)
     {
-        curHp -= damage; 
-        curHp = Mathf.Clamp(curHp, 0, maxHp); 
+        GameData.FirstPlayerHP -= damage; 
+        GameData.FirstPlayerHP = Mathf.Clamp(GameData.FirstPlayerHP, 0, maxHp); 
 
         if (hpBar != null)
         {
-            hpBar.UpdateHp(curHp / maxHp); 
+            hpBar.UpdateHp(GameData.FirstPlayerHP / maxHp); 
         }
     }
 }

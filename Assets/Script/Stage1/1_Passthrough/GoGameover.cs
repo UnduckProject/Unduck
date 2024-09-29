@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class GoGameover : MonoBehaviour
 {
-    public OVRCameraRig camera; 
+    public Transform camera; 
 
     void Update()
     {
