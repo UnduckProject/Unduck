@@ -22,13 +22,14 @@ public class MRStageManager : MonoBehaviour
     {
         if(Danseo==10)
         {
+            GameData.GameProgress=4;
             StartCoroutine(VictoryDelay());
         }
         
         if(PlayerHp.value<=0)
         {
-            GameData.FirstPlayerHP=100;
             SceneManager.LoadScene("Stage1");
+            GameData.DuckTransform=GameData.BeforeDuckTransform;
         }
         
     }
@@ -41,8 +42,8 @@ public class MRStageManager : MonoBehaviour
     private IEnumerator VictoryDelay()
     {
         audioSource.Play();
-        yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene("Stage1");
+        SceneManager.LoadScene("Stage2");
+        yield return new WaitForSeconds(1f);
 
     }
 

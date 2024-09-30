@@ -15,17 +15,17 @@ public class VRCameraMover : MonoBehaviour
 
     void Start()
     {
-        if (GameData.GameProgress == 1)
+        if (GameData.GameProgress == 1 && GameData.Win)
         {
             transform.position = target1.position;
         }
-        else if (GameData.GameProgress == 2)
+        else if (GameData.GameProgress == 2&& GameData.Win)
         {
             transform.position = target2.position;
         }
-        else if(GameData.GameProgress==3)
+        else
         {
-            transform.position = target3.position;
+            transform.position = resetPosition.position;
         }
     }
 

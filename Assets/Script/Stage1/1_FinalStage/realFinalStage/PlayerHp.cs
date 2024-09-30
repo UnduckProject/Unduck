@@ -2,35 +2,40 @@ using UnityEngine;
 
 public class PlayerHp : MonoBehaviour
 {
-    public float maxHp = 100; 
+    public float maxHp = 100;
+    public float curHp= 100; 
+    private AudioSource audioSource;
     public PlayerHpBar hpBar; 
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         if (hpBar != null)
         {
-            hpBar.UpdateHp(GameData.FirstPlayerHP / maxHp); 
+            hpBar.UpdateHp(curHp / maxHp); 
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
         
-        if (other.gameObject.CompareTag("attack"))
+        if (collision.gameObject.CompareTag("attack"))
         {
+            audioSource.Play();
+            Debug.Log("Attack received!");
             TakeDamage(25); 
-            Destroy(other.gameObject);
         }
     }
 
     public void TakeDamage(float damage)
     {
-        GameData.FirstPlayerHP -= damage; 
-        GameData.FirstPlayerHP = Mathf.Clamp(GameData.FirstPlayerHP, 0, maxHp); 
+        curHp -= damage; 
+        curHp = Mathf.Clamp(curHp, 0, maxHp); 
+        Debug.Log($"Current HP: {curHp}");
 
         if (hpBar != null)
         {
-            hpBar.UpdateHp(GameData.FirstPlayerHP / maxHp); 
+            hpBar.UpdateHp(curHp / maxHp); 
         }
     }
 }

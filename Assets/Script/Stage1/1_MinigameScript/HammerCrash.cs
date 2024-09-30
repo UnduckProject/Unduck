@@ -6,11 +6,12 @@ public class HammerCrash : MonoBehaviour
 {
     public GameObject hammer;
     private int naegudo=6;
+    private AudioSource audioSource;
 
     void Start()
     {
-       int naegudo=6;
-
+        naegudo=6;
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -26,6 +27,7 @@ public class HammerCrash : MonoBehaviour
          if (other.gameObject.tag == "MazeWall")
          {
             naegudo--;
+            audioSource.Play();
             Destroy(other.gameObject);
          }
      }

@@ -1,22 +1,25 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FallingDetection : MonoBehaviour
 {
-    public Transform centerEye; 
-    public float checkDistance = 1f; 
+    public Transform centerEye;
+    public float checkDistance = 2f;
+    private float delay = 2f; 
+    private float timer = 0f;
 
     void Update()
     {
-        
+        timer += Time.deltaTime;
+
+        if (timer < delay) return; 
+
         RaycastHit hit;
+
+    
         if (!Physics.Raycast(centerEye.position, Vector3.down, out hit, checkDistance))
         {
-            
-            GetComponent<Rigidbody>().isKinematic = false; 
-        }
-        else
-        {
-            GetComponent<Rigidbody>().isKinematic = true;
+            SceneManager.LoadScene("GameOver");
         }
     }
 }

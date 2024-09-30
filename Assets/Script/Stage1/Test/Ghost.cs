@@ -43,9 +43,6 @@ public class Ghost : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        else if(other.CompareTag("Player"))
-        {
-            Destroy(gameObject);
-        }
+        
     }
 }

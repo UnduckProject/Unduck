@@ -14,7 +14,7 @@ public class FinalGoalManager : MonoBehaviour
 
     public GameObject WTimer;
     public GameObject MazeMap; 
-    public GameObject ObjectSpawn;
+    public GameObject objSpawn;
     public GameObject RealFinalStage;
    
 
@@ -28,6 +28,44 @@ public class FinalGoalManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+    }
+    public void Initialize()
+    {
+        totalGoals = 0;
+        GameData.isBoss = false; 
+        GameData.FirstFinalStage = 0;
+        GameData.FirstBossHP=100;
+    }
+    void Update()
+    {
+        Transform parentTransform = GameObject.Find("ParentGameObject")?.transform;
+        if (parentTransform != null)
+        {
+            RealFinalStage = parentTransform.Find("realFinalStage")?.gameObject;
+        }
+
+        if(WTimer == null)
+        {
+            WTimer = GameObject.Find("WristTimer");
+        }
+        if(objSpawn == null)
+        {
+            objSpawn = GameObject.Find("ObjectSpawn");
+        }
+        if (goalCountText == null)
+        {
+            goalCountText = GameObject.Find("WristText")?.GetComponent<TMP_Text>();
+            MazeMap = GameObject.Find("MazeSpawn (1)");
+            if (goalCountText != null)
+            {
+                UpdateGoalCountText();
+                Debug.Log("WristText found and updated.");
+            }
+            else
+            {
+                Debug.LogWarning("WristText not found!");
+            }
         }
     }
 
@@ -54,7 +92,7 @@ public class FinalGoalManager : MonoBehaviour
             WTimer.gameObject.SetActive(false);
             goalCountText.gameObject.SetActive(false);
             MazeMap.gameObject.SetActive(false);
-            ObjectSpawn.gameObject.SetActive(false);
+            objSpawn.gameObject.SetActive(false);
             GameData.isBoss=false;
             RealFinalStage.gameObject.SetActive(true);
         }

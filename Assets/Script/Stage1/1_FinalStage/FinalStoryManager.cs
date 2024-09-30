@@ -12,7 +12,8 @@ public class FinalStoryManager : MonoBehaviour
     public TMP_Text pressAText;
     public GameObject mazeText;
     public FinalDuckMovement duckMovement;
-
+    public GameObject Duck;
+    public Transform SpawnPosition;
     private string [] storyLines = {
         "아..아.. 이제 알았다 너의 진심",
         "나에게 있어 이 세계란",
@@ -25,7 +26,7 @@ public class FinalStoryManager : MonoBehaviour
 
     void Start()
     {
-        
+        //GameData.GameProgress=2;
         ShowNextLine();
         GameData.isBoss=true;
         pressAText.gameObject.SetActive(true);
@@ -42,6 +43,7 @@ public class FinalStoryManager : MonoBehaviour
         }
         else
         {
+            Duck.transform.position = SpawnPosition.position;
             gameObject.SetActive(false);
             pressAText.gameObject.SetActive(false);
             mazeText.gameObject.SetActive(false);

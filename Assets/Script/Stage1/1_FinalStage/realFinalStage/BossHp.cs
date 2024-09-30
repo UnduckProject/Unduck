@@ -3,10 +3,12 @@ using UnityEngine;
 public class BossHp : MonoBehaviour
 {
     public float maxHp = 100; 
-    public BossHpBar hpBar; 
+    public BossHpBar hpBar;
+    private AudioSource audioSource; 
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         if (hpBar != null)
         {
             hpBar.UpdateHp(GameData.FirstBossHP / maxHp); 
@@ -17,6 +19,12 @@ public class BossHp : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("playerattack"))
         {
+            ParticleSystem particleSystem = gameObject.GetComponentInChildren<ParticleSystem>();
+            if (particleSystem != null)
+            {
+                particleSystem.Play();
+            }
+            audioSource.Play();
             TakeDamage(20); 
         }
     }

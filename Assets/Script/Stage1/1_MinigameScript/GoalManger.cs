@@ -34,7 +34,6 @@ public class GoalManager : MonoBehaviour
 
     public void Initialize()
     {
-        goalCountText = GameObject.Find("WristText").GetComponent<TMP_Text>();
         totalGoals = 0; 
         remainingGoals = 0; 
         UpdateGoalCountText();
@@ -42,6 +41,20 @@ public class GoalManager : MonoBehaviour
 
     void Update()
     {
+        if (goalCountText == null)
+        {
+            goalCountText = GameObject.Find("WristText")?.GetComponent<TMP_Text>();
+            audioSource = GameObject.Find("Success")?.GetComponent<AudioSource>();
+            if (goalCountText != null)
+            {
+                UpdateGoalCountText();
+                Debug.Log("WristText found and updated.");
+            }
+            else
+            {
+                Debug.LogWarning("WristText not found!");
+            }
+        }
         if(OVRInput.GetDown(OVRInput.Button.Start))
         {
             if(GameData.minigameOn)
