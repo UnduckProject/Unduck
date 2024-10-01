@@ -32,13 +32,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stage2/Stage2.unity
     guid: 1e46d8241e268ff44a6d8e3392e51a82
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Stage2/Intro.unity
     guid: 16eaff412fa900548ab8f53e8be65756
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Stage2/Stage2Minigame 2.unity
     guid: d142a75f015bf574197da9eb1419e94c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Stage2/GameOver.unity
     guid: 394f78d7b32b3b047a23c1e9f1c60496
   m_configObjects:
