@@ -11,10 +11,17 @@ public class GameController : MonoBehaviour
     private int score;
     private int combo;
     private float currentTime;
-    
+
     public int Score
     {
-        set => score = Mathf.Max(0, value);
+        set
+        {
+            score = Mathf.Max(0, value);
+            if (score >= 2000) // 2000점 이상일 때
+            {
+                GameOver(); // 게임 종료
+            }
+        }
         get => score;
     }
 
