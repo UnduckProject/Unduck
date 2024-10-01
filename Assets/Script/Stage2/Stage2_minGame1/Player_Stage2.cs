@@ -88,19 +88,33 @@ public class Player_Stage2 : MonoBehaviour
 
     void GetInput()
     {
-        // 키보드입력에 따라 0 ~ 1로 변환 left right up down
-        hAxis = Input.GetAxisRaw("Horizontal");
-        vAxis = Input.GetAxisRaw("Vertical");
-        // wDown = Input.GetButton("Walk");
-        rDown = Input.GetButton("Run");
-        jDown = Input.GetButtonDown("Jump");
-        reDown = Input.GetButtonDown("Reload");
-        fDown = Input.GetButton("Fire1");
-        gDown = Input.GetButtonDown("Fire2");
-        iDown = Input.GetButtonDown("Interation");
-        sDown1 = Input.GetButtonDown("Swap1");
-        sDown2 = Input.GetButtonDown("Swap2");
-        sDown3 = Input.GetButtonDown("Swap3");
+        Vector2 inputAxis = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
+        hAxis = inputAxis.x;
+        vAxis = inputAxis.y;
+
+        // 버튼 입력
+        rDown = OVRInput.Get(OVRInput.Button.PrimaryThumbstick); // 달리기 버튼
+        jDown = OVRInput.GetDown(OVRInput.Button.One); // 점프 버튼 (Primary Button)
+        reDown = OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger); // 재장전 버튼 (Secondary Button)
+        fDown = OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger); // 공격 버튼
+        gDown = OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger); // 수류탄 던지기 버튼
+        iDown = OVRInput.GetDown(OVRInput.Button.Two); // 상호작용 버튼
+        sDown1 = OVRInput.GetDown(OVRInput.Button.Three); // 무기 교체 버튼 1
+        sDown2 = OVRInput.GetDown(OVRInput.Button.Four); // 무기 교체 버튼 2
+        sDown3 = OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger); // 무기 교체 버튼 3
+
+        // hAxis = Input.GetAxisRaw("Horizontal");
+        // vAxis = Input.GetAxisRaw("Vertical");
+        // // wDown = Input.GetButton("Walk");
+        // rDown = Input.GetButton("Run");
+        // jDown = Input.GetButtonDown("Jump");
+        // reDown = Input.GetButtonDown("Reload");
+        // fDown = Input.GetButton("Fire1");
+        // gDown = Input.GetButtonDown("Fire2");
+        // iDown = Input.GetButtonDown("Interation");
+        // sDown1 = Input.GetButtonDown("Swap1");
+        // sDown2 = Input.GetButtonDown("Swap2");
+        // sDown3 = Input.GetButtonDown("Swap3");
     }
 
     void Move()
