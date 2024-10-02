@@ -1,3 +1,112 @@
+// using System.Collections;
+// using UnityEngine;
+
+// public class MoleSpawner : MonoBehaviour
+// {
+//     [SerializeField]
+//     private MoleFSM[] moles;
+//     [SerializeField]
+//     private float spawnTime;
+
+//     // ï¿½Î´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ (Normal: 85%, Red: 10%, Blue: 5%)
+//     private int[] spawnPercents = new int[3] { 85, 10, 5 };
+//     // ï¿½Ñ¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ö´ï¿½ ï¿½Î´ï¿½ï¿½ï¿½ ï¿½ï¿½
+//     public int MaxSpawnMole { set; get; } = 1;
+
+//     public void Setup()
+//     {
+//         StartCoroutine("SpawnMole");
+//     }
+
+//     private IEnumerator SpawnMole()
+//     {
+//         while (true)
+//         {
+//             // int index = Random.Range(0, moles.Length);
+
+//             // ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+//             // moles[index].MoleType = SpawnMoleType();
+
+//             // ï¿½Î´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+//             // moles[index].ChangeState(MoleState.MoveUp);
+
+//             // MaxSpawnMole ï¿½ï¿½ï¿½Ú¸ï¿½Å­ ï¿½Î´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+//             StartCoroutine("SpanwMultiMoles");
+
+//             // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+//             yield return new WaitForSeconds(spawnTime);
+//         }
+//     }
+
+//     private MoleType SpawnMoleType()
+//     {
+//         int percent = Random.Range(0, 100);
+//         float cumulative = 0;
+
+//         for (int i = 0; i < spawnPercents.Length; ++i)
+//         {
+//             cumulative += spawnPercents[i];
+
+//             if (percent < cumulative)
+//             {
+//                 return (MoleType)i; // ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Â´ï¿½ MoleType ï¿½ï¿½È¯
+//             }
+//         }
+
+//         return MoleType.Normal; // ï¿½âº»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Normal ï¿½ï¿½È¯
+//     }
+
+//     private IEnumerator SpanwMultiMoles()
+//     {
+//         int[] indexs = RandomNumerics(moles.Length, moles.Length);
+//         int currentSpawnMole = 0;
+//         int curretIndex = 0;
+
+//         while (curretIndex < indexs.Length)
+//         {
+//             if (moles[indexs[curretIndex]].MoleState == MoleState.UnderGround)
+//             {
+//                 moles[indexs[curretIndex]].MoleType = SpawnMoleType();
+//                 moles[indexs[curretIndex]].ChangeState(MoleState.MoveUp);
+//                 currentSpawnMole++;
+
+//                 yield return new WaitForSeconds(0.1f);
+//             }
+
+//             if (currentSpawnMole == MaxSpawnMole)
+//             {
+//                 break;
+//             }
+
+//             curretIndex++;
+//             yield return null;
+//         }
+//     }
+
+//     //0 ~ maxCountï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½Ê´ï¿½ nï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ş¼ï¿½ï¿½ï¿½
+//     private int[] RandomNumerics(int maxCount, int n)
+//     {
+//         int[] defaults = new int[maxCount];
+//         int[] results = new int[n];
+
+//         for (int i = 0; i < maxCount; i++)
+//         {
+//             defaults[i] = i;
+//         }
+
+//         for (int i = 0; i < n; i++)
+//         {
+//             int index = Random.Range(0, maxCount);
+
+//             results[i] = defaults[index];
+//             defaults[index] = defaults[maxCount - 1];
+
+//             maxCount--;
+//         }
+
+//         return results;
+//     }
+// }
 using System.Collections;
 using UnityEngine;
 
@@ -8,10 +117,44 @@ public class MoleSpawner : MonoBehaviour
     [SerializeField]
     private float spawnTime;
 
-    // µÎ´õÁö µîÀå È®·ü (Normal: 85%, Red: 10%, Blue: 5%)
+    // ìƒì„± í™•ë¥  (Normal: 85%, Red: 10%, Blue: 5%)
     private int[] spawnPercents = new int[3] { 85, 10, 5 };
-    // ÇÑ¹ø¿¡ µîÀåÇÏ´Â ÃÖ´ë µÎ´õÁö ¼ö
+    // ìµœëŒ€ ìƒì„±í•  ë‘ë”ì§€ ìˆ˜
     public int MaxSpawnMole { set; get; } = 1;
+
+    private void Awake()
+    {
+        // Mole ì˜¤ë¸Œì íŠ¸ë¥¼ ì°¾ëŠ” ì½”ë£¨í‹´ ì‹œì‘
+        StartCoroutine(FindMolesCoroutine());
+    }
+
+    private IEnumerator FindMolesCoroutine()
+    {
+        // Game(clone) ì˜¤ë¸Œì íŠ¸ê°€ ìƒì„±ë  ë•Œê¹Œì§€ ëŒ€ê¸°
+        while (true)
+        {
+            // "SpawnGame" ì˜¤ë¸Œì íŠ¸ë¥¼ ì°¾ìŒ
+            GameObject spawnGameObject = GameObject.Find("SpawnGame");
+            if (spawnGameObject != null)
+            {
+                // "Game(Clone)" ì˜¤ë¸Œì íŠ¸ë¥¼ ì°¾ìŒ
+                Transform gameTransform = spawnGameObject.transform.Find("Game(Clone)");
+                if (gameTransform != null)
+                {
+                    // "Mole" ì˜¤ë¸Œì íŠ¸ë¥¼ ì°¾ìŒ
+                    Transform moleParent = gameTransform.Find("Moles");
+                    if (moleParent != null)
+                    {
+                        // "Mole" ì˜¤ë¸Œì íŠ¸ ì•„ë˜ì˜ ëª¨ë“  MoleFSM ì»´í¬ë„ŒíŠ¸ë¥¼ ì°¾ìŒ
+                        moles = moleParent.GetComponentsInChildren<MoleFSM>();
+                        break; // ì°¾ìœ¼ë©´ ë£¨í”„ ì¢…ë£Œ
+                    }
+                }
+            }
+            // ì ì‹œ ëŒ€ê¸° í›„ ë‹¤ì‹œ í™•ì¸
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
 
     public void Setup()
     {
@@ -22,18 +165,7 @@ public class MoleSpawner : MonoBehaviour
     {
         while (true)
         {
-            // int index = Random.Range(0, moles.Length);
-
-            // ·£´ı Å¸ÀÔ ¼³Á¤
-            // moles[index].MoleType = SpawnMoleType();
-
-            // µÎ´õÁö »óÅÂ º¯°æ
-            // moles[index].ChangeState(MoleState.MoveUp);
-
-            // MaxSpawnMole ¼ıÀÚ¸¸Å­ µÎ´õÁö µîÀå
             StartCoroutine("SpanwMultiMoles");
-
-            // ´ÙÀ½ ½ºÆù±îÁö ´ë±â
             yield return new WaitForSeconds(spawnTime);
         }
     }
@@ -49,11 +181,11 @@ public class MoleSpawner : MonoBehaviour
 
             if (percent < cumulative)
             {
-                return (MoleType)i; // ÀÎµ¦½º¿¡ ¸Â´Â MoleType ¹İÈ¯
+                return (MoleType)i; // ì¸ë±ìŠ¤ì— í•´ë‹¹í•˜ëŠ” MoleType ë°˜í™˜
             }
         }
 
-        return MoleType.Normal; // ±âº»°ªÀ¸·Î Normal ¹İÈ¯
+        return MoleType.Normal; // ê¸°ë³¸ê°’ì€ Normal ë°˜í™˜
     }
 
     private IEnumerator SpanwMultiMoles()
@@ -83,7 +215,7 @@ public class MoleSpawner : MonoBehaviour
         }
     }
 
-    //0 ~ maxCount±îÁöÀÇ ¼ıÀÚ Áß °ãÄ¡Áö ¾Ê´Â n°³ÀÇ ³­¼ö»ı¼º ¸Ş¼­µå
+    // 0 ~ maxCountê¹Œì§€ì˜ ëœë¤ ì¸ë±ìŠ¤ë¥¼ nê°œ ìƒì„±í•˜ëŠ” í•¨ìˆ˜
     private int[] RandomNumerics(int maxCount, int n)
     {
         int[] defaults = new int[maxCount];

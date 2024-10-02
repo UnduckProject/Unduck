@@ -24,7 +24,7 @@ public class CountDown : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void StartCountDown(UnityAction action, int start=3, int end = 1)
+    public void StartCountDown(UnityAction action, int start=10, int end = 1)
     {
         StartCoroutine(OnCountDown(action, start, end));
     }
