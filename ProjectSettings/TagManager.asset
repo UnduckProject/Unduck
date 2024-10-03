@@ -29,6 +29,13 @@ TagManager:
   - Danseo
   - timeattack
   - wall
+  - Locomotion
+  - PassThrough
+  - PassThroughButton
+  - LocoButton
+  - LocoText
+  - SamplesInfoPanel
+  - potion
   layers:
   - Default
   - TransparentFX
