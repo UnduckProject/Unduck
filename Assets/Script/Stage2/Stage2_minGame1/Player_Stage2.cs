@@ -88,33 +88,33 @@ public class Player_Stage2 : MonoBehaviour
 
     void GetInput()
     {
-        Vector2 inputAxis = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
-        hAxis = inputAxis.x;
-        vAxis = inputAxis.y;
+        //Vector2 inputAxis = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
+        //hAxis = inputAxis.x;
+        //vAxis = inputAxis.y;
 
         // 버튼 입력
-        rDown = OVRInput.Get(OVRInput.Button.PrimaryThumbstick); // 달리기 버튼
-        jDown = OVRInput.GetDown(OVRInput.Button.One); // 점프 버튼 (Primary Button)
-        reDown = OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger); // 재장전 버튼 (Secondary Button)
-        fDown = OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger); // 공격 버튼
-        gDown = OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger); // 수류탄 던지기 버튼
-        iDown = OVRInput.GetDown(OVRInput.Button.Two); // 상호작용 버튼
-        sDown1 = OVRInput.GetDown(OVRInput.Button.Three); // 무기 교체 버튼 1
-        sDown2 = OVRInput.GetDown(OVRInput.Button.Four); // 무기 교체 버튼 2
-        sDown3 = OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger); // 무기 교체 버튼 3
+        //rDown = OVRInput.Get(OVRInput.Button.PrimaryThumbstick); // 달리기 버튼
+        //jDown = OVRInput.GetDown(OVRInput.Button.One); // 점프 버튼 (Primary Button)
+        //reDown = OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger); // 재장전 버튼 (Secondary Button)
+        //fDown = OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger); // 공격 버튼
+        //gDown = OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger); // 수류탄 던지기 버튼
+        //iDown = OVRInput.GetDown(OVRInput.Button.Two); // 상호작용 버튼
+        //sDown1 = OVRInput.GetDown(OVRInput.Button.Three); // 무기 교체 버튼 1
+        //sDown2 = OVRInput.GetDown(OVRInput.Button.Four); // 무기 교체 버튼 2
+        //sDown3 = OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger); // 무기 교체 버튼 3
 
-        // hAxis = Input.GetAxisRaw("Horizontal");
-        // vAxis = Input.GetAxisRaw("Vertical");
-        // // wDown = Input.GetButton("Walk");
-        // rDown = Input.GetButton("Run");
-        // jDown = Input.GetButtonDown("Jump");
-        // reDown = Input.GetButtonDown("Reload");
-        // fDown = Input.GetButton("Fire1");
-        // gDown = Input.GetButtonDown("Fire2");
-        // iDown = Input.GetButtonDown("Interation");
-        // sDown1 = Input.GetButtonDown("Swap1");
-        // sDown2 = Input.GetButtonDown("Swap2");
-        // sDown3 = Input.GetButtonDown("Swap3");
+        hAxis = Input.GetAxisRaw("Horizontal");
+        vAxis = Input.GetAxisRaw("Vertical");
+        // wDown = Input.GetButton("Walk");
+        //rDown = Input.GetButton("Run");
+        jDown = Input.GetButtonDown("Jump");
+        reDown = Input.GetButtonDown("Reload");
+        fDown = Input.GetButton("Fire1");
+        gDown = Input.GetButtonDown("Fire2");
+        iDown = Input.GetButtonDown("Interation");
+        sDown1 = Input.GetButtonDown("Swap1");
+        sDown2 = Input.GetButtonDown("Swap2");
+        sDown3 = Input.GetButtonDown("Swap3");
     }
 
     void Move()
@@ -323,12 +323,12 @@ public class Player_Stage2 : MonoBehaviour
 
                 Destroy(nearObject);
             }
-            else if (nearObject.tag == "Shop")
-            {
-                Shop shop = nearObject.GetComponent<Shop>();
-                shop.Enter(this);
-                isShop = true;
-            }
+            //else if (nearObject.tag == "Shop")
+            //{
+            //    Shop shop = nearObject.GetComponent<Shop>();
+            //    shop.Enter(this);
+            //    isShop = true;
+            //}
             // soundControl.InteractSound.Play();
         }
 
@@ -376,10 +376,10 @@ public class Player_Stage2 : MonoBehaviour
                     if (ammo > maxAmmo)
                         ammo = maxAmmo;
                     break;
-                case Item.Type.Coin:
-                    coin += item.value;
-                    if (coin > maxCoin)
-                        coin = maxCoin;
+                //case Item.Type.Coin:
+                //    coin += item.value;
+                //    if (coin > maxCoin)
+                //        coin = maxCoin;
                     break;
                 case Item.Type.Heart:
                     health += item.value;
@@ -454,19 +454,12 @@ public class Player_Stage2 : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Weapon" || other.tag == "Shop")
-            nearObject = other.gameObject;
+
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Weapon")
             nearObject = null;
-        else if (other.tag == "Shop")
-        {
-            Shop shop = nearObject.GetComponent<Shop>();
-            shop.Exit();
-            isShop = false;
-            nearObject = null;
-        }
+
     }
 }

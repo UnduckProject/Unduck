@@ -10,8 +10,8 @@ public class GameManager1 : MonoBehaviour
     public GameObject gameCam;
     public Player_Stage2 player;
     public Boss boss;
-    public GameObject itemShop;
-    public GameObject weaponShop;
+    //public GameObject itemShop;
+    //public GameObject weaponShop;
     public GameObject startZone;
     public int stage;
     public float playTime;
@@ -34,7 +34,7 @@ public class GameManager1 : MonoBehaviour
     public Text playerTimeTxt;
     public Text playerHealthTxt;
     public Text playerAmmoTxt;
-    public Text playerCoinTxt;
+    //public Text playerCoinTxt;
     public Image weapon1Img;
     public Image weapon2Img;
     public Image weapon3Img;
@@ -87,8 +87,8 @@ public class GameManager1 : MonoBehaviour
     public void StageStart()
     {
         isBattle = true;
-        itemShop.SetActive(false);
-        weaponShop.SetActive(false);
+        //itemShop.SetActive(false);
+        //weaponShop.SetActive(false);
         startZone.SetActive(false);
 
         player.transform.position = Vector3.up * 0.8f;
@@ -103,8 +103,7 @@ public class GameManager1 : MonoBehaviour
     {
         isBattle = false;
         player.transform.position = Vector3.up * 0.8f;
-        itemShop.SetActive(true);
-        weaponShop.SetActive(true);
+
         startZone.SetActive(true);
 
         foreach (Transform zone in enemyZones)
@@ -192,7 +191,7 @@ public class GameManager1 : MonoBehaviour
 
         // 플레이어 UI
         playerHealthTxt.text = player.health + " / " + player.maxHealth;
-        playerCoinTxt.text = string.Format("{0:n0}", player.coin);
+        //playerCoinTxt.text = string.Format("{0:n0}", player.coin);
         if (player.equipWeapon == null)
             playerAmmoTxt.text = "- / " + player.ammo;
         else if (player.equipWeapon.type == Weapon.Type.Melee)

@@ -17788,8 +17788,6 @@ MonoBehaviour:
   gameCam: {fileID: 77981599}
   player: {fileID: 1625146968}
   boss: {fileID: 0}
-  itemShop: {fileID: 0}
-  weaponShop: {fileID: 0}
   startZone: {fileID: 1975139554}
   stage: 0
   playTime: 0
@@ -17818,7 +17816,6 @@ MonoBehaviour:
   playerTimeTxt: {fileID: 197108756}
   playerHealthTxt: {fileID: 482231504}
   playerAmmoTxt: {fileID: 84680734}
-  playerCoinTxt: {fileID: 0}
   weapon1Img: {fileID: 1049981012}
   weapon2Img: {fileID: 592706305}
   weapon3Img: {fileID: 1156877031}
@@ -25079,7 +25076,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5903297864969995812, guid: 8f5e135a19626f544908fc8f156144b9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.95
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 5903297864969995812, guid: 8f5e135a19626f544908fc8f156144b9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -25262,7 +25259,7 @@ MonoBehaviour:
   grenadeObj: {fileID: 555043592709702526, guid: 44e982121bc61be499af9823253cda7a, type: 3}
   followCamera: {fileID: 77981602}
   gamemanager: {fileID: 0}
-  ammo: 15
+  ammo: 300
   health: 100
   coin: 10000
   score: 0
