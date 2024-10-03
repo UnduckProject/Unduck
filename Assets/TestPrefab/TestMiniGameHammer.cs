@@ -19,6 +19,8 @@ public class TestMiniGameHammer : MonoBehaviour
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        gameController = FindObjectOfType<GameController>();
+        objectDetector = FindObjectOfType<ObjectDetector>();
         StartCoroutine(FindMoleHitTextViewersCoroutine()); 
     }
 
