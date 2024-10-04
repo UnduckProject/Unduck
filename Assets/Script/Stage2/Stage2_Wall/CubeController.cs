@@ -31,7 +31,7 @@ public class CubeController : MonoBehaviour
         meshRenderer.material.color = cubeSpawner.CubeColors[colorIndex];
     }
 
-    private void OntriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         MeshRenderer renderer = other.GetComponent<MeshRenderer>();
 
