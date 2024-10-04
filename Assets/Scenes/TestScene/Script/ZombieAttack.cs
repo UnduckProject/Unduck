@@ -10,6 +10,7 @@ public class ZombieAttack : MonoBehaviour
     private int playerChance;
     public TMP_Text chanceCountText;
     public Transform spawnPosition;
+    public Transform centereye;
 
     void Start()
     {
@@ -23,6 +24,7 @@ public class ZombieAttack : MonoBehaviour
         {
             SceneManager.LoadScene("Stage2");
         }
+        
     }
     
     void OnTriggerEnter(Collider other)
@@ -48,10 +50,11 @@ public class ZombieAttack : MonoBehaviour
         if (isTriggered)
         {
             playerChance--;
-            transform.position = spawnPosition.position; 
+            centereye.position = spawnPosition.position; 
             Debug.Log("New Position: " + transform.position);
             UpdateChanceCountText();
         }
+        Debug.Log("New Position: " + transform.position);
     }
 
     void UpdateChanceCountText()
