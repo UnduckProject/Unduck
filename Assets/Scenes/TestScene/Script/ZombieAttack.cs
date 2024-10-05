@@ -22,7 +22,7 @@ public class ZombieAttack : MonoBehaviour
     {
         if (playerChance <= 0)
         {
-            SceneManager.LoadScene("Stage2");
+            SceneManager.LoadScene("GameOver");
         }
         
     }
@@ -50,11 +50,8 @@ public class ZombieAttack : MonoBehaviour
         if (isTriggered)
         {
             playerChance--;
-            centereye.position = spawnPosition.position; 
-            Debug.Log("New Position: " + transform.position);
             UpdateChanceCountText();
         }
-        Debug.Log("New Position: " + transform.position);
     }
 
     void UpdateChanceCountText()

@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameControllerWall : MonoBehaviour
 {
@@ -21,6 +22,16 @@ public class GameControllerWall : MonoBehaviour
         IsGameOver = false;
     }
 
+    void Update()
+    {
+        if(score == 10)
+        {
+            GameData.Win=true;
+            GameData.GameProgress=7;
+            SceneManager.LoadScene("Stage2");
+        }
+    }
+
     public void IncreaseScore()
     {
         score++;
@@ -29,23 +40,6 @@ public class GameControllerWall : MonoBehaviour
 
     public void GameOver()
     {
-        IsGameOver = true;
-        textScore.enabled = false;
-        panelResult.SetActive(true);
-
-        int highScore = PlayerPrefs.GetInt("HighScore");
-
-        if (score < highScore)
-        {
-            textHighScore.text = $"High Score {highScore}";
-        }
-        else
-        {
-            PlayerPrefs.SetInt("High Score", score);
-
-            textHighScore.text = $"High Score {score}";
-        }
-
-        textResultScore.text = $"Score {score}";
+        SceneManager.LoadScene("GameOver");
     }
 }

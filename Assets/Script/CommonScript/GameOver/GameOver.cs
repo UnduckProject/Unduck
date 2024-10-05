@@ -30,9 +30,17 @@ public class GameOver : MonoBehaviour
         }
         else
         {
-            gameObject.SetActive(false);
-            pressAText.gameObject.SetActive(false);
-            SceneManager.LoadScene("Stage1");
+            if(GameData.FirstStage){
+                gameObject.SetActive(false);
+                pressAText.gameObject.SetActive(false);
+                SceneManager.LoadScene("Stage1");
+            }
+            else
+            {
+                gameObject.SetActive(false);
+                pressAText.gameObject.SetActive(false);
+                SceneManager.LoadScene("Stage2");
+            }
         }
     }
 

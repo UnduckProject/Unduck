@@ -26,6 +26,7 @@ public class GameData
     public static bool returnTo=false;
     public static bool minigameOn=false;
     public static int Winprogress =0;
+    public static bool FirstStage = true;
 
     public static void ResetGameData()
     {
@@ -51,5 +52,6 @@ public class GameData
         minigameOn=false;
         Winprogress =0;
         Win = false;
+        FirstStage = true;
     }
 }
