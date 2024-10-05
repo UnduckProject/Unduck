@@ -117,7 +117,7 @@ public class GameController : MonoBehaviour
             score = Mathf.Max(0, value);
             if (score >= 2000) // 2000점 이상일 때
             {
-                GameOver(); // 게임 오버
+                SceneManager.LoadScene("Stage2"); // 게임 오버
             }
         }
         get => score;
