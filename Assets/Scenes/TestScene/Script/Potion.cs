@@ -17,6 +17,9 @@ public class Potion : MonoBehaviour
     {
         if(potions == 5)
         {
+            GameData.Win = true;
+            GameData.GameProgress = 6;
+            GameData.Winprogress = 3;
             SceneManager.LoadScene("Stage2");
         }
     }

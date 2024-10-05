@@ -23,6 +23,14 @@ public class VRCameraMover : MonoBehaviour
         {
             transform.position = target2.position;
         }
+        else if(GameData.GameProgress == 5 && GameData.Win)
+        {
+            transform.position = target1.position;
+        }
+        else if(GameData.GameProgress == 6 && GameData.Win)
+        {
+            transform.position = target2.position;
+        }
         else
         {
             transform.position = resetPosition.position;
@@ -44,6 +52,14 @@ public class VRCameraMover : MonoBehaviour
         else if(isMoving && GameData.GameProgress == 3)
         {
             MoveTowards(target3);
+        }
+        else if (isMoving && GameData.GameProgress == 5)
+        {
+            MoveTowards(target1);
+        }
+        else if (isMoving && GameData.GameProgress == 6)
+        {
+            MoveTowards(target2);
         }
 
         if (isOrg)

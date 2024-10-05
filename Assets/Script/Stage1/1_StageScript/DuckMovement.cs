@@ -27,8 +27,13 @@ public class DuckMovement : MonoBehaviour
         
         anim = GetComponent<Animator>();
         cc = GetComponent<CharacterController>(); audioSource = GetComponent<AudioSource>();
-        if(GameData.GameProgress != 0)
+        if(GameData.GameProgress == 5)
         {
+            transform.position = new Vector3(-21, 2, 10);
+        }
+        else if(GameData.GameProgress != 0)
+        {
+            
             transform.position = GameData.DuckTransform;
         }
     }

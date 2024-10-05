@@ -13,10 +13,14 @@ public class GameData
     public static bool HasTalked1 = false;
     public static bool HasTalked2 = false;
     public static bool HasTalked3 = false;
+    public static bool HasTalked4 = false;
+    public static bool HasTalked5 = false;
     public static bool isBoss = false;
     public static bool NpcTarget = false;
     public static bool winMsg1 = false;
     public static bool winMsg2 = false;
+    public static bool winMsg3 = false;
+    public static bool winMsg4 = false;
     public static bool winMsgOn = false;
     public static bool Win = false;
     public static bool returnTo=false;
@@ -36,6 +40,8 @@ public class GameData
         HasTalked1 = false;
         HasTalked2 = false;
         HasTalked3 = false;
+        HasTalked4 = false;
+        HasTalked5 = false;
         isBoss = false;
         NpcTarget = false;
         winMsg1 = false;

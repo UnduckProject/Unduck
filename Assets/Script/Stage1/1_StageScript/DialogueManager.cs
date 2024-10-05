@@ -79,6 +79,12 @@ void Start()
             GameData.LoadSceneName="MR_TEST 1";
             SceneManager.LoadScene(sceneName);
         }
+        else if(currentDialogueIndex >= dialogues.Count && GameData.GameProgress == 5)
+        {
+            panel.SetActive(false);
+            GameData.LoadSceneName = "Stage2_minigame1";
+            SceneManager.LoadScene(sceneName);
+        }
         else
         {
             dialogueText.text = dialogues[currentDialogueIndex];

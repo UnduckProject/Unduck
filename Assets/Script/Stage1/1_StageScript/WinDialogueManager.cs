@@ -67,6 +67,17 @@ public class WinDialogueManager : MonoBehaviour
                 GameData.winMsgOn=false;
                 NewArea.SetActive(true);
             }
+            else if(GameData.GameProgress==6)
+            {
+                GameData.winMsg3 = true;
+                GameData.winMsgOn = false;
+            }
+            else if(GameData.GameProgress==7)
+            {
+                GameData.winMsg4 = true;
+                GameData.winMsgOn = false;
+                NewArea.SetActive(true);
+            }
 
             if (cameraMover != null)
             {

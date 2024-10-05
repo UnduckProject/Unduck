@@ -11,13 +11,12 @@ public class testtrigger2 : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             GameData.DuckTransform=transform.position;
-            GameData.isBoss=true;
             LoadNextScene();
         }
     }
      public void LoadNextScene()
     {
-        GameData.LoadSceneName="MR_TEST 1";
+        GameData.LoadSceneName="Stage2_final";
         SceneManager.LoadScene("Loading");
     }
 

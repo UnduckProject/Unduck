@@ -34,6 +34,24 @@ public class SuccessMission : MonoBehaviour
                     dialogueManager2.StartDialogue();
                 }
             }
+            else if(GameData.GameProgress == 6 && !GameData.winMsgOn)
+            {
+                if (GameData.Winprogress == 3)
+                {
+                    GameData.winMsgOn = true;
+                    GameData.Win = false;
+                    dialogueManager1.StartDialogue();
+                }
+            }
+            else if (GameData.GameProgress == 7 && !GameData.winMsgOn)
+            {
+                if (GameData.Winprogress == 4)
+                {
+                    GameData.winMsgOn = true;
+                    GameData.Win = false;
+                    dialogueManager2.StartDialogue();
+                }
+            }
         }
         
     }
