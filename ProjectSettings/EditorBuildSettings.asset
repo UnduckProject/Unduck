@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/CommonStage/NewMenu.unity
     guid: c7ade1f69b815334ab6b1ba5ea1a831b
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/CommonStage/GameOver.unity
     guid: c2f012464d4a4544e86b339b29a381b8
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/CommonStage/Loading.unity
     guid: fda9f697540864644a9689bf9f842d36
   - enabled: 0
@@ -29,18 +29,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Stage1/MR_TEST 1.unity
     guid: f3c2be104f9dcc1439ff39491f85f396
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Stage2/Stage2.unity
     guid: 1e46d8241e268ff44a6d8e3392e51a82
-  - enabled: 0
-    path: Assets/Scenes/Stage2/Intro.unity
-    guid: 16eaff412fa900548ab8f53e8be65756
   - enabled: 1
     path: Assets/Scenes/Stage2/Stage2Minigame 2.unity
     guid: d142a75f015bf574197da9eb1419e94c
-  - enabled: 0
-    path: Assets/Scenes/Stage2/GameOver.unity
-    guid: 394f78d7b32b3b047a23c1e9f1c60496
+  - enabled: 1
+    path: Assets/Scenes/TestScene/Sample Scene.unity
+    guid: 710c79cbf899f784aaa86e717f834540
+  - enabled: 1
+    path: Assets/Scenes/TestScene/Stage2_Wall_test.unity
+    guid: ead0c080b7593bd43bfa9f8c9a45b31f
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 3fddb3ba23070be41a7507fcfd88a78c, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 36608d62b61c079469a8fa64d3654b83, type: 2}

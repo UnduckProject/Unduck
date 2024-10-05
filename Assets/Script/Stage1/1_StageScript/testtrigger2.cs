@@ -16,7 +16,7 @@ public class testtrigger2 : MonoBehaviour
     }
      public void LoadNextScene()
     {
-        GameData.LoadSceneName="Stage2_final";
+        GameData.LoadSceneName="Stage2Minigame 2";
         SceneManager.LoadScene("Loading");
     }
 

@@ -24,10 +24,11 @@ public class GameControllerWall : MonoBehaviour
 
     void Update()
     {
-        if(score == 10)
+        if(score == 1)
         {
             GameData.Win=true;
             GameData.GameProgress=7;
+            GameData.Winprogress = 4;
             SceneManager.LoadScene("Stage2");
         }
     }

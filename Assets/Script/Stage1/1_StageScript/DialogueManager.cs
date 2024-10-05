@@ -34,7 +34,6 @@ void Start()
 
     public void StartDialogue()
     {
-        Debug.Log("다이얼로그 매니저 켜졌음, 프로그레스는: " + GameData.GameProgress + "hasTalked는: " + GameData.HasTalked1);
         if (dialogues.Count == 0)
             return;
 
@@ -82,7 +81,19 @@ void Start()
         else if(currentDialogueIndex >= dialogues.Count && GameData.GameProgress == 5)
         {
             panel.SetActive(false);
-            GameData.LoadSceneName = "Stage2_minigame1";
+            GameData.LoadSceneName = "Sample Scene";
+            SceneManager.LoadScene(sceneName);
+        }
+        else if(currentDialogueIndex >= dialogues.Count && GameData.GameProgress == 6)
+        {
+            panel.SetActive(false);
+            GameData.LoadSceneName = "Stage2_Wall_test";
+            SceneManager.LoadScene(sceneName);
+        }
+        else if(currentDialogueIndex >= dialogues.Count && GameData.GameProgress == 7)
+        {
+            panel.SetActive(false);
+            GameData.LoadSceneName = "Stage2Minigame 2";
             SceneManager.LoadScene(sceneName);
         }
         else
