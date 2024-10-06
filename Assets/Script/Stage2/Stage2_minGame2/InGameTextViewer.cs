@@ -46,30 +46,28 @@ public class InGameTextViewer : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(FindUIElementsCoroutine()); // UI 요소 찾기 코루틴 시작
+        StartCoroutine(FindUIElementsCoroutine()); 
     }
 
     private IEnumerator FindUIElementsCoroutine()
     {
-        // Game(clone) 오브젝트가 생성될 때까지 대기
+
         while (true)
         {
-            // "SpawnGame" 오브젝트를 찾음
             GameObject spawnGameObject = GameObject.Find("SpawnGame");
             if (spawnGameObject != null)
             {
-                // "Game(Clone)" 오브젝트를 찾음
                 Transform gameTransform = spawnGameObject.transform.Find("Game(Clone)");
                 if (gameTransform != null)
                 {
                     Transform canvas = gameTransform.Find("Canvas");
                     if (canvas != null)
                     {
-                        // "Canvas" 아래의 UI 요소들을 찾음
+
                         Transform textScoreTransform = canvas.Find("TextScore");
                         Transform textComboTransform = canvas.Find("TextCombo");
                         Transform sliderPlayTimeTransform = canvas.Find("SliderPlayTime");
-                        Transform textPlayTimeTransform = sliderPlayTimeTransform.Find("TextPlayTime"); // SliderPlayTime 아래의 TextPlayTime 찾기
+                        Transform textPlayTimeTransform = sliderPlayTimeTransform.Find("TextPlayTime"); 
 
                         if (textScoreTransform != null)
                         {
@@ -107,7 +105,7 @@ public class InGameTextViewer : MonoBehaviour
                             Debug.LogWarning("TextPlayTime 오브젝트를 찾을 수 없습니다.");
                         }
 
-                        break; // 모든 UI 요소를 찾으면 루프 종료
+                        break; 
                     }
                     else
                     {
@@ -123,7 +121,6 @@ public class InGameTextViewer : MonoBehaviour
             {
                 Debug.LogWarning("SpawnGame 오브젝트를 찾을 수 없습니다.");
             }
-            // 잠시 대기 후 다시 확인
             yield return new WaitForSeconds(0.1f);
         }
     }

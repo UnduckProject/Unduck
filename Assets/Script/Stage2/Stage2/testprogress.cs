@@ -13,9 +13,9 @@ public class testprocess : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameData.GameProgress==0)
-        {
-            GameData.GameProgress=5;
-        }
+        // if(GameData.GameProgress==0)
+        // {
+        //     GameData.GameProgress=5;
+        // }
     }
 }

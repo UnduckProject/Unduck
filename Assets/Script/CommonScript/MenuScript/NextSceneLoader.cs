@@ -18,7 +18,7 @@ public class NextSceneLoader : MonoBehaviour
     private IEnumerator LoadSceneAfterDelay()
     {
         yield return new WaitForSeconds(1f);
-        GameData.LoadSceneName = "Stage1";
+        GameData.LoadSceneName = "firstScene";
         SceneManager.LoadScene("Loading");
     }
 }

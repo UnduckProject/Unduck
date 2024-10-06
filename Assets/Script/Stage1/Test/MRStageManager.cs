@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; 
-using System.Collections; 
+using UnityEngine.UI;
+using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class MRStageManager : MonoBehaviour
@@ -10,29 +10,32 @@ public class MRStageManager : MonoBehaviour
     public Slider PlayerHp;
     private int Danseo;
     public AudioSource audioSource;
+    private bool hasPlayedVictoryAudio = false; 
 
     // Start is called before the first frame update
     void Start()
     {
-        Danseo=0;
+        Danseo = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Danseo==10)
+        if (Danseo == 10 && !hasPlayedVictoryAudio) 
         {
-            GameData.GameProgress=4;
+            hasPlayedVictoryAudio = true; 
+            GameData.GameProgress = 5;
+            audioSource.Play();
             StartCoroutine(VictoryDelay());
         }
         
-        if(PlayerHp.value<=0)
+        if (PlayerHp.value <= 0)
         {
-            SceneManager.LoadScene("Stage1");
-            GameData.DuckTransform=GameData.BeforeDuckTransform;
+            SceneManager.LoadScene("GameOver");
+            // GameData.DuckTransform = GameData.BeforeDuckTransform;
         }
-        
     }
+
     public void addPoint()
     {
         Danseo++;
@@ -41,10 +44,7 @@ public class MRStageManager : MonoBehaviour
 
     private IEnumerator VictoryDelay()
     {
-        audioSource.Play();
-        SceneManager.LoadScene("Stage2");
         yield return new WaitForSeconds(1f);
-
+        SceneManager.LoadScene("firstScene");
     }
-
 }
