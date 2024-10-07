@@ -61,7 +61,7 @@ public class ObjectSpawner : MonoBehaviour {
      
 
         GameObject monster = Instantiate(monsterPrefab, monsterSpawnPosition, Quaternion.identity);
-        AudioSource.PlayClipAtPoint(monsterSound, monsterSpawnPosition);
+        AudioSource.PlayClipAtPoint(monsterSound, monsterSpawnPosition,2f);
 
         Vector3 directionToPlayer = (player.position - monsterSpawnPosition).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(directionToPlayer);

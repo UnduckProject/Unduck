@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class testprocess : MonoBehaviour
 {
+    public GameObject Portal;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,5 +18,9 @@ public class testprocess : MonoBehaviour
         // {
         //     GameData.GameProgress=5;
         // }
+        if(GameData.GameProgress==7)
+        {
+            Portal.SetActive(true);
+        }
     }
 }
