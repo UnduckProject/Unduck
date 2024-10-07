@@ -79,6 +79,7 @@ public class GoalManager : MonoBehaviour
         if (remainingGoals <= 0 && !GameData.minigameOn)
         {
             GameData.Win=true;
+            GameData.duckwan=false;
             GameData.GameProgress=1;
             StartCoroutine(VictoryDelay());
         }

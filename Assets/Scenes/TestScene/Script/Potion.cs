@@ -21,6 +21,7 @@ public class Potion : MonoBehaviour
         if (potions == 1) // 5로 고치기
         {
             GameData.Win = true;
+            GameData.duckwan=false;
             GameData.GameProgress = 6;
             GameData.Winprogress = 3;
             SceneManager.LoadScene("Stage2");

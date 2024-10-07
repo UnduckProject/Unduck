@@ -9018,13 +9018,13 @@ PrefabInstance:
       addedObject: {fileID: 139987696}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 05c177bb6ba01e643b431d44280a37cf, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 139987695}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 05c177bb6ba01e643b431d44280a37cf, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 139987694}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 05c177bb6ba01e643b431d44280a37cf, type: 3}
       insertIndex: -1
       addedObject: {fileID: 139987693}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 05c177bb6ba01e643b431d44280a37cf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 139987697}
   m_SourcePrefab: {fileID: 100100000, guid: 05c177bb6ba01e643b431d44280a37cf, type: 3}
 --- !u!1 &139987692 stripped
 GameObject:
@@ -9153,23 +9153,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.004, z: 0}
---- !u!114 &139987695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 139987692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21dac39a9ec68d842a8c8442b27bdac4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  jumpsound: {fileID: 8300000, guid: 9ac450ea0b6d039498e5446c472b1f8e, type: 3}
-  footstep: {fileID: 8300000, guid: c5205236ecb6607488427d7059b35d8b, type: 3}
-  footstepVolume: 0.3
-  jumpsoundVolume: 0.3
 --- !u!95 &139987696
 Animator:
   serializedVersion: 5
@@ -9191,6 +9174,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &139987697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139987692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac4177991a9184144874723aa7d76a80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  jumpsound: {fileID: 8300000, guid: 9ac450ea0b6d039498e5446c472b1f8e, type: 3}
+  footstep: {fileID: 8300000, guid: c5205236ecb6607488427d7059b35d8b, type: 3}
+  footstepVolume: 0.3
+  jumpsoundVolume: 0.3
 --- !u!1001 &141186730
 PrefabInstance:
   m_ObjectHideFlags: 0

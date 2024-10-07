@@ -9,7 +9,7 @@ public class ZombieAttack : MonoBehaviour
     private bool isTriggered = false;
     private int playerChance;
     public TMP_Text chanceCountText;
-    public Transform spawnPosition;
+    //public Transform spawnPosition;
     public Transform centereye;
 
     void Start()
@@ -22,6 +22,7 @@ public class ZombieAttack : MonoBehaviour
     {
         if (playerChance <= 0)
         {
+            GameData.duckwan=false;
             SceneManager.LoadScene("GameOver");
         }
         

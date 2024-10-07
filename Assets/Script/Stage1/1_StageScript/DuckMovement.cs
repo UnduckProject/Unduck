@@ -11,7 +11,6 @@ public class DuckMovement : MonoBehaviour
     private AudioSource audioSource;
 
     public float speed;
-
     public AudioClip jumpsound;
     public AudioClip footstep;
 
@@ -24,15 +23,11 @@ public class DuckMovement : MonoBehaviour
 
     void Start()
     {
-        
+        GameData.duckwan = false;    
         anim = GetComponent<Animator>();
         cc = GetComponent<CharacterController>(); audioSource = GetComponent<AudioSource>();
         Debug.Log(GameData.GameProgress);
-        if(GameData.GameProgress == 5)
-        {
-            transform.position = new Vector3(-21, 2, 10);
-        }
-        else if(GameData.GameProgress==0)
+        if(GameData.GameProgress==0)
         {
            transform.position = new Vector3(-41, 20, -14); 
         }
@@ -45,6 +40,12 @@ public class DuckMovement : MonoBehaviour
    
     void Update()
     {
+        if(GameData.GameProgress == 5 && !GameData.duckwan)
+        {
+            GameData.duckwan=true;
+            transform.position = new Vector3(-21, 2, 10);
+            Debug.Log(transform.position);
+        }
         footstepTimer -= Time.deltaTime;
         if (cc.isGrounded)
         {

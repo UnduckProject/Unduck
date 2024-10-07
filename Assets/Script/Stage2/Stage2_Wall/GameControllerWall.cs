@@ -29,6 +29,7 @@ public class GameControllerWall : MonoBehaviour
             GameData.Win=true;
             GameData.GameProgress=7;
             GameData.Winprogress = 4;
+            GameData.duckwan=false;
             SceneManager.LoadScene("Stage2");
         }
     }
@@ -41,6 +42,7 @@ public class GameControllerWall : MonoBehaviour
 
     public void GameOver()
     {
+        GameData.duckwan=false;
         SceneManager.LoadScene("GameOver");
     }
 }

@@ -27,11 +27,13 @@ public class GameData
     public static bool minigameOn=false;
     public static int Winprogress =0;
     public static bool FirstStage = true;
+    public static bool duckwan=false;
 
     public static void ResetGameData()
     {
         LoadSceneName = string.Empty; 
         GameProgress = 0;
+        duckwan=false;
         FirstFinalStage = 0;
         FirstBossTransform = Vector3.zero;
         FirstBossHP = 100;

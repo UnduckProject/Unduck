@@ -19,6 +19,7 @@ public class FallingDetection : MonoBehaviour
     
         if (!Physics.Raycast(centerEye.position, Vector3.down, out hit, checkDistance))
         {
+            GameData.duckwan=false;
             SceneManager.LoadScene("GameOver");
         }
     }

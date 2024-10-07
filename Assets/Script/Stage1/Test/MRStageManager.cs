@@ -21,16 +21,18 @@ public class MRStageManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Danseo == 10 && !hasPlayedVictoryAudio) 
+        if (Danseo == 1 && !hasPlayedVictoryAudio) 
         {
             hasPlayedVictoryAudio = true; 
             GameData.GameProgress = 5;
+            GameData.duckwan=false;
             audioSource.Play();
             StartCoroutine(VictoryDelay());
         }
         
         if (PlayerHp.value <= 0)
         {
+            GameData.duckwan=false;
             SceneManager.LoadScene("GameOver");
             // GameData.DuckTransform = GameData.BeforeDuckTransform;
         }

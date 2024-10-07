@@ -29,12 +29,14 @@ public class realFinalObjectSpawner : MonoBehaviour {
             GameData.FirstPlayerHP=100;
             CancelInvoke("SpawnObject"); 
             GameData.GameProgress=3;
+            GameData.duckwan=false;
             SceneManager.LoadScene("Stage1");
         }
 
         if (PlayerHp.value <= 0) {
             isSpawning = false;
             CancelInvoke("SpawnObject");
+            GameData.duckwan=false;
             GameData.FirstBossHP=100;
             SceneManager.LoadScene("GameOver");
         }

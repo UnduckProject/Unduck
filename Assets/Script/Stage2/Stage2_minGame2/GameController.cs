@@ -115,7 +115,7 @@ public class GameController : MonoBehaviour
         set
         {
             score = Mathf.Max(0, value);
-            if (score >= 2000) // 2000점 이상일 때
+            if (score >= 100) // 2000점 이상일 때
             {
                 GameData.GameProgress=8;
                 SceneManager.LoadScene("firstscene");
@@ -232,7 +232,7 @@ public class GameController : MonoBehaviour
         // PlayerPrefs.SetInt("CurrentNormalMoleHitCount", NormalMoleHitCount);
         // PlayerPrefs.SetInt("CurrentRedMoleHitCount", RedMoleHitCount);
         // PlayerPrefs.SetInt("CurrentBlueMoleHitCount", BlueMoleHitCount);
-
+        GameData.duckwan=false;
         SceneManager.LoadScene("GameOver");
     }
 }
