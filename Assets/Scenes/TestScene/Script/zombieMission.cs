@@ -8,12 +8,15 @@ public class zombieMission : MonoBehaviour
 {
     public TMP_Text storyText; 
     public TMP_Text pressAText;
+    public AudioSource audioSource;
+    public AudioClip[] storyAudioClips;
+
     private string [] storyLines = {
-        "은밀한 바이러스를 연구하던 연구시설 입니다.",
-        "이 곳에서 어떤일이 벌어질지 몰라요!",
-        "펭순을 구하기 위한 시약의 샘플을 찾고 돌아가세요!",
-        "시약의 샘플은 손으로 쥐고 도착 장소로 돌아오세요.",
-        "그리고 박스안에다 두고 다시 오리의 세계로 돌아가세요."
+        "이 곳은 은밀한 바이러스를 연구하던 연구시설 입니다.",
+        "이 곳에서 어떤일이 벌어질지 모릅니다.",
+        "시약의 샘플은 연구실 바닥 사물들 근처에 있습니다.",
+        "시약의 샘플을 손을 쥐어 들고 움직이십시오.",
+        "그리고 박스안에다 두고 다시 오리의 세계로 돌아가십시오."
     };
     private int currentLine = 0;
 
@@ -28,6 +31,8 @@ public class zombieMission : MonoBehaviour
     {
         if (currentLine < storyLines.Length)
         {
+            audioSource.clip = storyAudioClips[currentLine];
+            audioSource.Play();
             storyText.text = storyLines[currentLine];
             currentLine++;
         }

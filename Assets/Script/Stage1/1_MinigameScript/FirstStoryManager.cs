@@ -8,10 +8,13 @@ public class FirstStoryManager : MonoBehaviour
 {
     public TMP_Text storyText; 
     public TMP_Text pressAText;
+    public AudioSource audioSource;
+    public AudioClip[] storyAudioClips;
     private string [] storyLines = {
-        "미로에 있는 모든 코인을 모아야 해",
-        "오른쪽 손목을 보면 남은 코인개수가 보일거야",
-        "이번에는 오리 없이 혼자서 해결해봐"
+        "미로에 있는 모든 코인을 모아야 소아저씨의 시험에 통과 할 수 있습니다.",
+        "오른쪽 손목을 보면 남은 코인의 개수를 알 수 있죠.",
+        "앞에 놓아져 있는 망치를 이용하여 길을 개척하여 나가보세요!",
+        "총 3개의 벽을 부술 수 있다는 점을 명심하세요!"
     };
     private int currentLine = 0;
 
@@ -27,6 +30,8 @@ public class FirstStoryManager : MonoBehaviour
     {
         if (currentLine < storyLines.Length)
         {
+            audioSource.clip = storyAudioClips[currentLine];
+            audioSource.Play();
             storyText.text = storyLines[currentLine];
             currentLine++;
         }

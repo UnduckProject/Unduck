@@ -12,17 +12,19 @@ public class realFinalStoryManager : MonoBehaviour
     public TMP_Text pressAText;
     public GameObject Boss;
     public GameObject BigBoss;
-    private AudioSource audioSource;
+    //private AudioSource audioSource;
     public GameObject backgroud1;
     public GameObject backgroud2;
+    public AudioSource audioSource;
+    public AudioClip[] storyAudioClips;
 
     private string [] storyLines = {
-        "현실세계가 흔들리기 시작한다.",
-        "보스가 커지기 시작한다.",
-        "이것도 한번 받아 쳐보시지",
-        "보스가 던지는 물건을 받아쳐서 보스를 맞추십시오!",
-        "보스의 진정한 힘이 일어나기 시작합니다.",
-        "* 이 대화가 끝나면 찐막이 시작합니다. *"
+        "이런 현실세계가 무너지기 시작하고 있습니다.",
+        "두덕이한테 당해버렸군요.",
+        "조심하십시오. 두덕이가 커져 이제 당신에게 피해를 주게됩니다.",
+        "두덕이가 던지는 구체를 배트로 변한 손으로 쳐내십시오.",
+        "오른손목 위에는 플레이어의 체력 정면에는 두덕이의 체력이 나오게됩니다.",
+        "구체에 맞지 않도록 조심하세요."
     };
     private int currentLine = 0;
     private Coroutine alertSoundCoroutine;
@@ -34,8 +36,8 @@ public class realFinalStoryManager : MonoBehaviour
         ShowNextLine();
         pressAText.gameObject.SetActive(true);
         StartCoroutine(AnimatePressAText());
-        audioSource = GetComponent<AudioSource>();
-        audioSource.Play();
+        // audioSource = GetComponent<AudioSource>();
+        // audioSource.Play();
         Boss.SetActive(true);
 
     }
@@ -44,11 +46,12 @@ public class realFinalStoryManager : MonoBehaviour
     {
         if (currentLine < storyLines.Length)
         {
-            if (currentLine == 1)
-            {
-                audioSource.enabled=false;
-            }
-
+            // if (currentLine == 1)
+            // {
+            //     audioSource.enabled=false;
+            // }
+            audioSource.clip = storyAudioClips[currentLine];
+            audioSource.Play();
             storyText.text = storyLines[currentLine];
             currentLine++;
         }

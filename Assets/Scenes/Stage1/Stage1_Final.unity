@@ -1978,6 +1978,7 @@ GameObject:
   - component: {fileID: 69401699}
   - component: {fileID: 69401698}
   - component: {fileID: 69401697}
+  - component: {fileID: 69401702}
   m_Layer: 5
   m_Name: Final_Mission
   m_TagString: Untagged
@@ -2004,6 +2005,14 @@ MonoBehaviour:
   duckMovement: {fileID: 1801848077}
   Duck: {fileID: 1801848068}
   SpawnPosition: {fileID: 1062089709}
+  audioSource: {fileID: 69401702}
+  storyAudioClips:
+  - {fileID: 8300000, guid: f727d3c80f6d5de45aa8e6e1c493993c, type: 3}
+  - {fileID: 8300000, guid: 6dbf40a256155c747b807083a63a534a, type: 3}
+  - {fileID: 8300000, guid: e3653d0886df16a4f856741b55b25061, type: 3}
+  - {fileID: 8300000, guid: 5b280764331f065418a2c7fd2e48e40d, type: 3}
+  - {fileID: 8300000, guid: 75cc40bb8e430434dbf563956ae1f755, type: 3}
+  - {fileID: 8300000, guid: 2fe41f643424f8e43ae9bc1424c61128, type: 3}
 --- !u!114 &69401698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2087,6 +2096,102 @@ RectTransform:
   m_AnchoredPosition: {x: 4, y: 10}
   m_SizeDelta: {x: 766, y: 627}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!82 &69401702
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69401696}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &71981623
 GameObject:
   m_ObjectHideFlags: 0
@@ -10351,6 +10456,14 @@ MonoBehaviour:
   BigBoss: {fileID: 207226199}
   backgroud1: {fileID: 1641604153}
   backgroud2: {fileID: 739949690}
+  audioSource: {fileID: 314300408}
+  storyAudioClips:
+  - {fileID: 8300000, guid: 62d5fc9d646512b42b5007d64d0c9be3, type: 3}
+  - {fileID: 8300000, guid: fd76504b5c5647d41bc08831c8fe1422, type: 3}
+  - {fileID: 8300000, guid: 4939b9aae233de7468902018e37bfec2, type: 3}
+  - {fileID: 8300000, guid: 926382e0b573ca54b824d84bb6e2004e, type: 3}
+  - {fileID: 8300000, guid: 00dbd0d8a8c1ab644a757e88d40dda55, type: 3}
+  - {fileID: 8300000, guid: 53d51d11ae5745d46a5e9169fa102181, type: 3}
 --- !u!82 &314300408
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10361,9 +10474,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 03179d892953a324c9179085ab305f2e, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.1
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -24405,8 +24518,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

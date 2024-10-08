@@ -9,13 +9,14 @@ public class SecondStoryManager : MonoBehaviour
     public GameObject ObjectSpawn;
     public TMP_Text storyText; 
     public TMP_Text pressAText;
+    public AudioSource audioSource;
+    public AudioClip[] storyAudioClips;
     private string [] storyLines = {
-        "이 곳은 너의 세계와 나의 세계가 합쳐진 이공간",
-        "너의 세계에 잡혀 먹지 안도록 조심해야 할거야",
-        "내가 이 돌덩이로 너에게 남은 오리세계의 힘을 없애버릴테다!",
-        "골렘이 던지는 돌을 막지 못하면 움직일 수 있는 땅이 좁아지게 됩니다",
-        "오른손에 깃든 힘을 이용해 돌을 없애보세요 (1분)",
-        "* 이 대화가 끝나면 골렘이 나타나 돌을 던지게 됩니다 *"
+        "이 곳은 현실세계와 가상세계가 합쳐진 공간입니다.",
+        "바닥은 현재 리오의 세계의 바닥으로 리오의 세계에 있을 수 있도록 해주는 것이지요.",
+        "바닥이 부서져 현실세계에 닿는다면 리오의 세계에서 빠져나가게 됩니다.",
+        "골렘이 던지는 돌을 검으로 변한 손으로 갈라주세요.",
+        "골렘의 돌을 없애며 이제 1분을 버티시면 됩니다."
     };
     private int currentLine = 0;
 
@@ -30,6 +31,8 @@ public class SecondStoryManager : MonoBehaviour
     {
         if (currentLine < storyLines.Length)
         {
+            audioSource.clip = storyAudioClips[currentLine];
+            audioSource.Play();
             storyText.text = storyLines[currentLine];
             currentLine++;
         }

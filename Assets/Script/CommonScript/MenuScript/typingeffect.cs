@@ -6,6 +6,9 @@ public class typingeffect : MonoBehaviour
 {
     public TMP_Text storyText; 
     public TMP_Text pressAText;
+    public AudioSource audioSource;
+    public AudioClip[] storyAudioClips;
+    private bool press;
     private string[] storyLines = {
         "옛날 옛적에, 평화로운 마을에 펭순이, 리오, 그리고 펭돌이가 함께 살고 있었어요.",
         "펭순이와 리오는 서로를 짝사랑했지만, 펭돌이 역시 펭순이를 좋아하고 있었죠.",
@@ -38,7 +41,7 @@ public class typingeffect : MonoBehaviour
 
     void Start()
     {
-        pressAText.gameObject.SetActive(true);
+        press=false;
         StartCoroutine(AnimatePressAText());
         ShowNextLine();
     }
@@ -49,7 +52,8 @@ public class typingeffect : MonoBehaviour
         {
             if (currentLine < storyLines.Length)
             {
-                StartCoroutine(TypeText(storyLines[currentLine]));
+                pressAText.gameObject.SetActive(false);
+                StartCoroutine(TypeText(storyLines[currentLine],currentLine));
                 currentLine++;
             }
             else
@@ -63,7 +67,8 @@ public class typingeffect : MonoBehaviour
         {
             if (currentLine2 < storyLines2.Length)
             {
-                StartCoroutine(TypeText(storyLines2[currentLine2]));
+                pressAText.gameObject.SetActive(false);
+                StartCoroutine(TypeText(storyLines2[currentLine2],currentLine2+7));
                 currentLine2++;
             }
             else
@@ -77,31 +82,38 @@ public class typingeffect : MonoBehaviour
         {
             if (currentLine3 < storyLines3.Length)
             {
-                StartCoroutine(TypeText(storyLines3[currentLine3]));
+                pressAText.gameObject.SetActive(false);
+                StartCoroutine(TypeText(storyLines3[currentLine3],currentLine3+11));
                 currentLine3++;
             }
             else
             {
                 pressAText.gameObject.SetActive(false);
-                SceneManager.LoadScene("New Menu");
+                SceneManager.LoadScene("NewMenu");
             }
         }
     }
 
-    private IEnumerator TypeText(string line)
+    private IEnumerator TypeText(string line, int lineIndex)
     {
         storyText.text = ""; 
+        audioSource.clip = storyAudioClips[lineIndex];
+        audioSource.Play();
+
         foreach (char letter in line.ToCharArray())
         {
             storyText.text += letter; 
-            yield return new WaitForSeconds(0.1f); 
+            yield return new WaitForSeconds(0.08f); 
         }
+        pressAText.gameObject.SetActive(true);
+        press=true;
     }
 
     void Update()
     {
-        if (OVRInput.GetDown(OVRInput.Button.One)) 
+        if (OVRInput.GetDown(OVRInput.Button.One) && press) 
         {
+            press=false;
             ShowNextLine();
         }
     }

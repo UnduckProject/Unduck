@@ -9,7 +9,9 @@ public class DialogueManager : MonoBehaviour
 {
     public string sceneName;
     public List<string> dialogues; 
-    private int currentDialogueIndex = 0; 
+    private int currentDialogueIndex = 0;
+    public AudioSource audioSource;
+    public AudioClip[] storyAudioClips; 
 
     public GameObject panel; 
     public TMP_Text dialogueText; 
@@ -40,6 +42,8 @@ void Start()
         currentDialogueIndex = 0;
         panel.SetActive(true);
         dialogueText.text = dialogues[currentDialogueIndex];
+        audioSource.clip = storyAudioClips[currentDialogueIndex];
+        audioSource.Play();
     }
 
     void Update()
@@ -59,7 +63,7 @@ void Start()
     void NextDialogue()
     {
         currentDialogueIndex++;
-
+        audioSource.Stop();
         if (currentDialogueIndex >= dialogues.Count && GameData.GameProgress == 0)
         {
             panel.SetActive(false); 
@@ -99,12 +103,18 @@ void Start()
         else
         {
             dialogueText.text = dialogues[currentDialogueIndex];
+            if (currentDialogueIndex < storyAudioClips.Length)
+            {
+                audioSource.clip = storyAudioClips[currentDialogueIndex];
+                audioSource.Play();
+            }
         }
     }
 
     public void StopDialogue()
     {
-        currentDialogueIndex = 0; 
+        currentDialogueIndex = 0;
+        audioSource.Stop(); 
         panel.SetActive(false); 
     }
 }

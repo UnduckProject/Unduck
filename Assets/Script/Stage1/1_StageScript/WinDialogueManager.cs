@@ -13,6 +13,8 @@ public class WinDialogueManager : MonoBehaviour
     public VRCameraMover cameraMover;
     public GameObject panel; 
     public TMP_Text dialogueText; 
+    public AudioSource audioSource;
+    public AudioClip[] storyAudioClips; 
 
     void Start()
     {
@@ -39,6 +41,8 @@ public class WinDialogueManager : MonoBehaviour
         currentDialogueIndex = 0;
         panel.SetActive(true);
         dialogueText.text = dialogues[currentDialogueIndex];
+        audioSource.clip = storyAudioClips[currentDialogueIndex];
+        audioSource.Play();
     }
 
     void Update()
@@ -51,6 +55,7 @@ public class WinDialogueManager : MonoBehaviour
 
     void NextDialogue()
     {
+        audioSource.Stop();
         currentDialogueIndex++;
 
         if (currentDialogueIndex >= dialogues.Count)
@@ -88,6 +93,11 @@ public class WinDialogueManager : MonoBehaviour
         else
         {
             dialogueText.text = dialogues[currentDialogueIndex];
+            if (currentDialogueIndex < storyAudioClips.Length)
+            {
+                audioSource.clip = storyAudioClips[currentDialogueIndex];
+                audioSource.Play();
+            }
         }
     }
 }

@@ -14,13 +14,15 @@ public class FinalStoryManager : MonoBehaviour
     public FinalDuckMovement duckMovement;
     public GameObject Duck;
     public Transform SpawnPosition;
+    public AudioSource audioSource;
+    public AudioClip[] storyAudioClips;
     private string [] storyLines = {
-        "아..아.. 이제 알았다 너의 진심",
-        "나에게 있어 이 세계란",
-        "살.인.이.다",
-        "골렘이 던지는 돌을 막지 못하면 제한시간이 줄어들게 (10초) 됩니다!",
-        "오른손에 깃든 힘을 이용해 돌을 없애보세요 (제한시간 2분)",
-        "* 이 대화가 끝나면 마지막 스테이지가 시작됩니다. *"
+        "두덕이가 강제로 현실공간으로 당신을 소환시켰습니다.",
+        "리오도 같이 끌려 온 것을 보니 아주 큰 위험은 아니군요.",
+        "리오가 존재하는 미로를 트리거 버튼을 이용하여 안전한 위치로 옮기십시오.",
+        "그리고 두덕이가 던지는 돌을 검으로 베어버리십시오.",
+        "베지않고 넘긴다면 현실세계에 있을 수 있는 시간이 줄어들게 됩니다.(-10초)",
+        "두덕이의 돌을 막고 리오가 코인을 다 먹을 수 있도록 하십시오."
     };
     private int currentLine = 0;
 
@@ -38,6 +40,8 @@ public class FinalStoryManager : MonoBehaviour
     {
         if (currentLine < storyLines.Length)
         {
+            audioSource.clip = storyAudioClips[currentLine];
+            audioSource.Play();
             storyText.text = storyLines[currentLine];
             currentLine++;
         }
