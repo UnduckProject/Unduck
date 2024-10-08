@@ -117,6 +117,7 @@ public class GameController : MonoBehaviour
             score = Mathf.Max(0, value);
             if (score >= 100) // 2000점 이상일 때
             {
+                GameData.GameEND=true;
                 GameData.GameProgress=8;
                 SceneManager.LoadScene("firstscene");
             }

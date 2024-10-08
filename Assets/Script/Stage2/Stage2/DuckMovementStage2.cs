@@ -13,34 +13,61 @@ public class DuckMovementStage2 : MonoBehaviour
     public float speed;
     public AudioClip jumpsound;
     public AudioClip footstep;
+    public Transform target1;
+    public Transform target2;
 
+    private bool isInitialized1 = false;
+    private bool isInitialized2 = false;
     public float footstepVolume=0.1f;
     public float jumpsoundVolume=0.1f;
-    private bool duckduck;
+    private bool duckduck=false;
     private float footstepTimer;
     private float footstepInterval=0.3f;
 
 
     void Start()
-    {
-        duckduck = false;    
+    {   
         anim = GetComponent<Animator>();
         cc = GetComponent<CharacterController>(); audioSource = GetComponent<AudioSource>();
         Debug.Log(GameData.GameProgress);
         if(GameData.GameProgress==5)
         {
-           transform.position = new Vector3(-21, 2, 10); 
+           transform.position = new Vector3(-21f, 2f, 10f); 
         }
-        else
+        else if(GameData.GameProgress==6)
         {  
-            transform.position = GameData.DuckTransform;
+            transform.position = target1.position;
+        }
+        else if(GameData.GameProgress==7)
+        {
+            transform.position= target2.position;
         }
     }
 
    
     void Update()
     {
-        Vector3 FirstPosition = new Vector3(-21,2,10);
+        Vector3 FirstPosition = new Vector3(-21f,2f,10f);
+        Debug.Log(this.transform.position);
+        
+        if(!isInitialized1)
+        {
+            if (GameData.GameProgress == 6)
+            {
+                transform.position = target1.position;
+                isInitialized1 = true;
+            }
+        }
+
+        if(!isInitialized2)
+        {
+            if (GameData.GameProgress == 7)
+            {
+                transform.position = target2.position;
+                isInitialized2 = true;
+            }
+        }
+
         if(!duckduck)
         {
             if(transform.position != FirstPosition)

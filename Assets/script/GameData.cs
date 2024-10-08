@@ -22,6 +22,7 @@ public class GameData
     public static bool winMsg3 = false;
     public static bool winMsg4 = false;
     public static bool winMsgOn = false;
+    public static bool GameEND = false;
     public static bool Win = false;
     public static bool returnTo=false;
     public static bool minigameOn=false;

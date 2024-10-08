@@ -10,6 +10,7 @@ public class NPCAreaController4 : MonoBehaviour
     private bool isQuest = false;
     void Update()
     {
+        Debug.Log(GameData.HasTalked4);
         if (GameData.GameProgress == 5)
         {
             GameData.HasTalked4 = false;

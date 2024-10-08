@@ -8,6 +8,7 @@ public class testprocess : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //GameData.GameProgress=5;
         GameData.FirstStage=false;
     }
 

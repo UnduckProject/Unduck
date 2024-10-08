@@ -14,6 +14,12 @@ public class DuckMovement : MonoBehaviour
     public AudioClip jumpsound;
     public AudioClip footstep;
 
+    public Transform target1;
+    public Transform target2;
+    public Transform target3;
+    private bool isInitialized1 = false;
+    private bool isInitialized2 = false;
+    private bool isInitialized3 = false;
     public float footstepVolume=0.1f;
     public float jumpsoundVolume=0.1f;
 
@@ -21,7 +27,7 @@ public class DuckMovement : MonoBehaviour
     private float footstepInterval=0.3f;
 
 
-    void Start()
+    void Awake()
     {
         GameData.duckwan = false;    
         anim = GetComponent<Animator>();
@@ -31,21 +37,51 @@ public class DuckMovement : MonoBehaviour
         {
            transform.position = new Vector3(-41, 20, -14); 
         }
-        else
+        else if(GameData.GameProgress == 1)
         {  
-            transform.position = GameData.DuckTransform;
+            transform.position = target1.position;
         }
+        else if(GameData.GameProgress == 2)
+        {
+            transform.position = target2.position;
+        }
+        else if(GameData.GameProgress==3)
+        {
+            transform.position = target3.position;
+        }
+
     }
 
    
     void Update()
     {
-        if(GameData.GameProgress == 5 && !GameData.duckwan)
+        if(!isInitialized1)
         {
-            GameData.duckwan=true;
-            transform.position = new Vector3(-21, 2, 10);
-            Debug.Log(transform.position);
+            if(GameData.GameProgress == 1)
+            {  
+                transform.position = target1.position;
+                isInitialized1=true;
+            }
         }
+
+        if(!isInitialized2)
+        {
+            if(GameData.GameProgress == 2)
+            {  
+                transform.position = target2.position;
+                isInitialized2=true;
+            }
+        }
+
+        if(!isInitialized3)
+        {
+            if(GameData.GameProgress == 3)
+            {  
+                transform.position = target3.position;
+                isInitialized3=true;
+            }
+        }
+        
         footstepTimer -= Time.deltaTime;
         if (cc.isGrounded)
         {

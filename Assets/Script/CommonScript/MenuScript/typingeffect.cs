@@ -68,7 +68,7 @@ public class typingeffect : MonoBehaviour
             if (currentLine2 < storyLines2.Length)
             {
                 pressAText.gameObject.SetActive(false);
-                StartCoroutine(TypeText(storyLines2[currentLine2],currentLine2+7));
+                StartCoroutine(TypeText(storyLines2[currentLine2],currentLine2+8));
                 currentLine2++;
             }
             else
@@ -83,7 +83,7 @@ public class typingeffect : MonoBehaviour
             if (currentLine3 < storyLines3.Length)
             {
                 pressAText.gameObject.SetActive(false);
-                StartCoroutine(TypeText(storyLines3[currentLine3],currentLine3+11));
+                StartCoroutine(TypeText(storyLines3[currentLine3],currentLine3+12));
                 currentLine3++;
             }
             else
