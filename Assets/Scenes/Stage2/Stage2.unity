@@ -17017,11 +17017,11 @@ MonoBehaviour:
   - "\uC790 \uC774\uC81C \uCCAB \uBC88\uC9F8 \uAC8C\uC784\uC73C\uB85C \uAC00\uBCFC\uAE4C?!"
   audioSource: {fileID: 405099589}
   storyAudioClips:
-  - {fileID: 8300000, guid: 2bef44c58e277b349992531b1fbab271, type: 3}
-  - {fileID: 8300000, guid: 0a2174f9223d04f449665ad6c3d92aab, type: 3}
-  - {fileID: 8300000, guid: 200cb2aa8e14729409c0a82e7bdae856, type: 3}
-  - {fileID: 8300000, guid: fec85516fc1340e4b934ac9126d06c43, type: 3}
-  - {fileID: 8300000, guid: 96b4c081276c1764995e060132e60519, type: 3}
+  - {fileID: 8300000, guid: 7aefdfba0098dd5438cc3ed2ad722698, type: 3}
+  - {fileID: 8300000, guid: 915d2efb5d6fb3543ad14af5c321b7d3, type: 3}
+  - {fileID: 8300000, guid: 8c016859b8f13ba4a81859d4351e3bbe, type: 3}
+  - {fileID: 8300000, guid: cbe6e97d553eca843bc877a70977d618, type: 3}
+  - {fileID: 8300000, guid: ff28fe5b5d603a24b88a37fe295cb3c0, type: 3}
   panel: {fileID: 1240931672}
   dialogueText: {fileID: 1996210071}
 --- !u!114 &405099585
@@ -19043,7 +19043,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5073843440183493646, guid: b83eb6d64aaa91545840560abfd50d9d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6647758}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5558067654107143860, guid: b83eb6d64aaa91545840560abfd50d9d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 483598462}
   m_SourcePrefab: {fileID: 100100000, guid: b83eb6d64aaa91545840560abfd50d9d, type: 3}
 --- !u!1 &483598460 stripped
 GameObject:
@@ -19055,6 +19058,102 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5073843440183493646, guid: b83eb6d64aaa91545840560abfd50d9d, type: 3}
   m_PrefabInstance: {fileID: 483598459}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &483598462
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483598460}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: cf427e8b074704b41b727afe6f854c92, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &486842891
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29641,10 +29740,10 @@ MonoBehaviour:
   dialogueText: {fileID: 1969385954}
   audioSource: {fileID: 800581303}
   storyAudioClips:
-  - {fileID: 8300000, guid: 2bef44c58e277b349992531b1fbab271, type: 3}
-  - {fileID: 8300000, guid: 0a2174f9223d04f449665ad6c3d92aab, type: 3}
-  - {fileID: 8300000, guid: 200cb2aa8e14729409c0a82e7bdae856, type: 3}
-  - {fileID: 8300000, guid: fec85516fc1340e4b934ac9126d06c43, type: 3}
+  - {fileID: 8300000, guid: bae65a6f128a46a4991a3e37310d8c3a, type: 3}
+  - {fileID: 8300000, guid: 4cd69f2acdc38544aad0d3ce9f1cac1c, type: 3}
+  - {fileID: 8300000, guid: 9aef37aef57ac224fa9130f9a6f73585, type: 3}
+  - {fileID: 8300000, guid: 4f51e480886f06942bbaa9b086405af4, type: 3}
 --- !u!224 &800581299
 RectTransform:
   m_ObjectHideFlags: 0
@@ -34317,10 +34416,10 @@ MonoBehaviour:
   dialogueText: {fileID: 384390212}
   audioSource: {fileID: 924585927}
   storyAudioClips:
-  - {fileID: 8300000, guid: 2bef44c58e277b349992531b1fbab271, type: 3}
-  - {fileID: 8300000, guid: 0a2174f9223d04f449665ad6c3d92aab, type: 3}
-  - {fileID: 8300000, guid: 200cb2aa8e14729409c0a82e7bdae856, type: 3}
-  - {fileID: 8300000, guid: fec85516fc1340e4b934ac9126d06c43, type: 3}
+  - {fileID: 8300000, guid: cbe6e97d553eca843bc877a70977d618, type: 3}
+  - {fileID: 8300000, guid: 7aefdfba0098dd5438cc3ed2ad722698, type: 3}
+  - {fileID: 8300000, guid: dc7e00a78cf68b147aaccee474a1ea81, type: 3}
+  - {fileID: 8300000, guid: 915d2efb5d6fb3543ad14af5c321b7d3, type: 3}
 --- !u!224 &924585923
 RectTransform:
   m_ObjectHideFlags: 0
@@ -57572,10 +57671,10 @@ MonoBehaviour:
   - "\uADF8\uB7FC \uD589\uC6B4\uC744 \uBE4C\uC9C0"
   audioSource: {fileID: 1613366412}
   storyAudioClips:
-  - {fileID: 8300000, guid: 2bef44c58e277b349992531b1fbab271, type: 3}
-  - {fileID: 8300000, guid: 0a2174f9223d04f449665ad6c3d92aab, type: 3}
-  - {fileID: 8300000, guid: 200cb2aa8e14729409c0a82e7bdae856, type: 3}
-  - {fileID: 8300000, guid: fec85516fc1340e4b934ac9126d06c43, type: 3}
+  - {fileID: 8300000, guid: 4f51e480886f06942bbaa9b086405af4, type: 3}
+  - {fileID: 8300000, guid: 5518541ca06e1954ea259691724ba4b6, type: 3}
+  - {fileID: 8300000, guid: 9aef37aef57ac224fa9130f9a6f73585, type: 3}
+  - {fileID: 8300000, guid: b80f72c151efcaa4bbc94a154f823be7, type: 3}
   panel: {fileID: 1239709346}
   dialogueText: {fileID: 813902997}
 --- !u!224 &1613366408
