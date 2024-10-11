@@ -30,16 +30,22 @@ public class GameOver : MonoBehaviour
         }
         else
         {
-            if(GameData.FirstStage){
-                gameObject.SetActive(false);
-                pressAText.gameObject.SetActive(false);
-                SceneManager.LoadScene("Stage1");
-            }
-            else
+            if(GameData.Demo)
             {
-                gameObject.SetActive(false);
-                pressAText.gameObject.SetActive(false);
-                SceneManager.LoadScene("Stage2");
+                SceneManager.LoadScene("NewMenu");
+            }
+            else{
+                if(GameData.FirstStage){
+                    gameObject.SetActive(false);
+                    pressAText.gameObject.SetActive(false);
+                    SceneManager.LoadScene("Stage1");
+                }
+                else
+                {
+                    gameObject.SetActive(false);
+                    pressAText.gameObject.SetActive(false);
+                    SceneManager.LoadScene("Stage2");
+                }
             }
         }
     }

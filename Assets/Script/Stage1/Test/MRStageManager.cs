@@ -47,6 +47,12 @@ public class MRStageManager : MonoBehaviour
     private IEnumerator VictoryDelay()
     {
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene("firstScene");
+        if(GameData.Demo)
+        {
+            SceneManager.LoadScene("NewMenu");
+        }
+        else{
+            SceneManager.LoadScene("firstScene");
+        }
     }
 }

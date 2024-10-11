@@ -24,7 +24,13 @@ public class Potion : MonoBehaviour
             GameData.duckwan=false;
             GameData.GameProgress = 6;
             GameData.Winprogress = 3;
-            SceneManager.LoadScene("Stage2");
+            if(GameData.Demo)
+            {
+                SceneManager.LoadScene("NewMenu");
+            }
+            else{
+                SceneManager.LoadScene("Stage2");
+            }
         }
     }
 

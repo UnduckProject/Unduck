@@ -97,8 +97,12 @@ public class GoalManager : MonoBehaviour
     {
         audioSource.Play();
         yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene("Stage1");
-
+        if(GameData.Demo){
+            SceneManager.LoadScene("NewMenu");
+        }
+        else{
+            SceneManager.LoadScene("Stage1");
+        }
     }
 
 

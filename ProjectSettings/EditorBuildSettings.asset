@@ -47,6 +47,27 @@ EditorBuildSettings:
   - enabled: 0
     path: "Assets/Samples/Meta XR Interaction \u200BSDK/68.0.1/Example Scenes/RayExamples.unity"
     guid: 1b2d3f90c0f50b94cb910c66c773d00d
+  - enabled: 1
+    path: Assets/Scenes/PracticeScene/Demo_Boss.unity
+    guid: 0a7424958e301d14590cfc61f83b4503
+  - enabled: 1
+    path: Assets/Scenes/PracticeScene/Demo_Golem.unity
+    guid: 6453e5fa8a52bab49bf2e9a9c3bef57e
+  - enabled: 1
+    path: Assets/Scenes/PracticeScene/Demo_Maze.unity
+    guid: 578560af0dd6ec144bbf9057a65be8a3
+  - enabled: 1
+    path: Assets/Scenes/PracticeScene/Demo_MR.unity
+    guid: b1d3cc51664e2da4a948091486b7a74c
+  - enabled: 1
+    path: Assets/Scenes/PracticeScene/Demo_Mole.unity
+    guid: 7e849040f5cf46c499ca27225d345069
+  - enabled: 1
+    path: Assets/Scenes/PracticeScene/Demo_Zombie.unity
+    guid: d1798787483961f4d9675e5c00c9d9b1
+  - enabled: 1
+    path: Assets/Scenes/PracticeScene/Demo_Wall.unity
+    guid: 2f00bbb9bf096df49a14c723e2bc5ca2
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 3fddb3ba23070be41a7507fcfd88a78c, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 36608d62b61c079469a8fa64d3654b83, type: 2}

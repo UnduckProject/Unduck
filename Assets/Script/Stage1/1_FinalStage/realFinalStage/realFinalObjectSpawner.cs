@@ -30,7 +30,13 @@ public class realFinalObjectSpawner : MonoBehaviour {
             CancelInvoke("SpawnObject"); 
             GameData.GameProgress=3;
             GameData.duckwan=false;
-            SceneManager.LoadScene("Stage1");
+            if(GameData.Demo)
+            {
+                SceneManager.LoadScene("NewMenu");
+            }
+            else{
+                SceneManager.LoadScene("Stage1");
+            }
         }
 
         if (PlayerHp.value <= 0) {

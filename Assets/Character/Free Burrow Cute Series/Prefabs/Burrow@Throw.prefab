@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Burrow@Throw
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ca5602307e3bb1643a9e1253330b3b47, type: 3}
+      propertyPath: m_TagString
+      value: Monster
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

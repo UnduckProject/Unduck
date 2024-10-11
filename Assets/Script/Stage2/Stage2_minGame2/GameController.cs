@@ -119,7 +119,13 @@ public class GameController : MonoBehaviour
             {
                 GameData.GameEND=true;
                 GameData.GameProgress=8;
-                SceneManager.LoadScene("firstscene");
+                if(GameData.Demo)
+                {
+                    SceneManager.LoadScene("NewMenu");
+                }
+                else{
+                    SceneManager.LoadScene("firstscene");
+                }
             }
         }
         get => score;

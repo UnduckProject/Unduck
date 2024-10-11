@@ -10,7 +10,7 @@ public class FinalGoalManager : MonoBehaviour
     public int totalGoals = 0; 
     public int remainingGoals = 0; 
 
-    public TMP_Text goalCountText;
+    //public TMP_Text goalCountText;
 
     public GameObject WTimer;
     public GameObject MazeMap; 
@@ -20,6 +20,7 @@ public class FinalGoalManager : MonoBehaviour
 
     void Awake()
     {
+        GameData.GameProgress=2;
         if (Instance == null)
         {
             Instance = this;
@@ -39,6 +40,7 @@ public class FinalGoalManager : MonoBehaviour
     }
     void Update()
     {
+        
         Transform parentTransform = GameObject.Find("ParentGameObject")?.transform;
         if (parentTransform != null)
         {
@@ -48,38 +50,39 @@ public class FinalGoalManager : MonoBehaviour
         if(WTimer == null)
         {
             WTimer = GameObject.Find("WristTimer");
+            MazeMap = GameObject.Find("MazeSpawn (1)");
         }
         if(objSpawn == null)
         {
             objSpawn = GameObject.Find("ObjectSpawn");
         }
-        if (goalCountText == null)
-        {
-            goalCountText = GameObject.Find("WristText")?.GetComponent<TMP_Text>();
-            MazeMap = GameObject.Find("MazeSpawn (1)");
-            if (goalCountText != null)
-            {
-                UpdateGoalCountText();
-                Debug.Log("WristText found and updated.");
-            }
-            else
-            {
-                Debug.LogWarning("WristText not found!");
-            }
-        }
+        // if (goalCountText == null)
+        // {
+        //     goalCountText = GameObject.Find("WristText")?.GetComponent<TMP_Text>();
+        //     MazeMap = GameObject.Find("MazeSpawn (1)");
+        //     if (goalCountText != null)
+        //     {
+        //         UpdateGoalCountText();
+        //         Debug.Log("WristText found and updated.");
+        //     }
+        //     else
+        //     {
+        //         Debug.LogWarning("WristText not found!");
+        //     }
+        // }
     }
 
     public void RegisterGoal()
     {
         totalGoals++;
         remainingGoals++;
-        UpdateGoalCountText();
+        //UpdateGoalCountText();
     }
 
     public void GoalDestroyed()
     {
         remainingGoals--;
-        UpdateGoalCountText();
+       // UpdateGoalCountText();
 
         if (remainingGoals <= 0)
         {
@@ -90,7 +93,7 @@ public class FinalGoalManager : MonoBehaviour
             }
 
             WTimer.gameObject.SetActive(false);
-            goalCountText.gameObject.SetActive(false);
+           // goalCountText.gameObject.SetActive(false);
             MazeMap.gameObject.SetActive(false);
             objSpawn.gameObject.SetActive(false);
             GameData.isBoss=false;
@@ -98,11 +101,11 @@ public class FinalGoalManager : MonoBehaviour
         }
     }
 
-    void UpdateGoalCountText()
-    {
-        if (goalCountText != null)
-        {
-            goalCountText.text = $"Goals: {remainingGoals}/{totalGoals}";
-        }
-    }
+    // void UpdateGoalCountText()
+    // {
+    //     if (goalCountText != null)
+    //     {
+    //         goalCountText.text = $"Goals: {remainingGoals}/{totalGoals}";
+    //     }
+    // }
 }

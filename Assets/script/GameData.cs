@@ -29,6 +29,7 @@ public class GameData
     public static int Winprogress =0;
     public static bool FirstStage = true;
     public static bool duckwan=false;
+    public static bool Demo=false;
 
     public static void ResetGameData()
     {
@@ -56,5 +57,6 @@ public class GameData
         Winprogress =0;
         Win = false;
         FirstStage = true;
+        Demo=false;
     }
 }

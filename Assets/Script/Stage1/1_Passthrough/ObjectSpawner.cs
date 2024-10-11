@@ -35,8 +35,13 @@ public class ObjectSpawner : MonoBehaviour {
                 GameData.duckwan=false;
                 GameData.Win=true;
                 GameData.GameProgress=2;
-                GameData.LoadSceneName="Stage1";
-                SceneManager.LoadScene("Loading");
+                if(GameData.Demo)
+                {
+                    SceneManager.LoadScene("NewMenu");
+                }
+                else{
+                    SceneManager.LoadScene("Stage1");
+                }
  
             }
         }

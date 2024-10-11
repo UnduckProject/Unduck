@@ -30,7 +30,13 @@ public class GameControllerWall : MonoBehaviour
             GameData.GameProgress=7;
             GameData.Winprogress = 4;
             GameData.duckwan=false;
-            SceneManager.LoadScene("Stage2");
+            if(GameData.Demo)
+            {
+                SceneManager.LoadScene("NewMenu");
+            }
+            else{
+                SceneManager.LoadScene("Stage2");
+            }
         }
     }
 

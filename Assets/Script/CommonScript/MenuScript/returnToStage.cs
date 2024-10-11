@@ -26,6 +26,14 @@ public class returnToStage : MonoBehaviour
             {
                 GameData.HasTalked3=false;
             }
+            else if(GameData.GameProgress==5)
+            {
+                GameData.HasTalked4=false;
+            }
+            else if(GameData.GameProgress==6)
+            {
+                GameData.HasTalked5=false;
+            }
             GameData.DuckTransform=GameData.BeforeDuckTransform;
             StartCoroutine(LoadSceneAfterDelay());
         }
