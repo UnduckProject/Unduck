@@ -12,11 +12,11 @@ public class SecondStoryManager : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip[] storyAudioClips;
     private string [] storyLines = {
-        "이 곳은 현실세계와 가상세계가 합쳐진 공간입니다.",
-        "바닥은 현재 리오의 세계의 바닥으로 리오의 세계에 있을 수 있도록 해주는 것이지요.",
-        "바닥이 부서져 현실세계에 닿는다면 리오의 세계에서 빠져나가게 됩니다.",
+        "이 곳은 현실세계와 가상세계가 \n합쳐진 공간입니다.",
+        "바닥은 현재 리오의 세계의 바닥으로 \n리오의 세계에 있을 수 있도록 해주는 것이지요.",
+        "바닥이 부서져 현실세계에 닿는다면 \n리오의 세계에서 빠져나가게 됩니다.",
         "골렘이 던지는 돌을 검으로 변한 손으로 갈라주세요.",
-        "골렘의 돌을 없애며 이제 1분을 버티시면 됩니다."
+        "골렘의 돌을 없애며 이제 30초를 버티시면 됩니다."
     };
     private int currentLine = 0;
 

@@ -12693,11 +12693,11 @@ MonoBehaviour:
   monsterPrefab: {fileID: 7876363959096737858, guid: 310f268ebe120b542b495e41317cfb0e, type: 3}
   monsterSound: {fileID: 8300000, guid: dd68c6f0dfd306c489dc7d2919167e42, type: 3}
   rockSound: {fileID: 8300000, guid: ea3485258d093e143944202333a562fe, type: 3}
-  spawnInterval: 4
+  spawnInterval: 5
   spawnArea: {x: 15, y: 10, z: 15}
   player: {fileID: 1017952134}
   timerText: {fileID: 1222080753}
-  timer: 10
+  timer: 30
 --- !u!4 &1215230527
 Transform:
   m_ObjectHideFlags: 0
