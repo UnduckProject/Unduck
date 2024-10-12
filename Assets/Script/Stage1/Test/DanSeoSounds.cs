@@ -12,7 +12,7 @@ public class DanSeoSounds : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag=="item")
+        if(other.gameObject.tag=="Item")
             audioSource.Play();
     }
 }

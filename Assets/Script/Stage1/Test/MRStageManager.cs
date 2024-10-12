@@ -21,7 +21,7 @@ public class MRStageManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Danseo == 1 && !hasPlayedVictoryAudio) 
+        if (Danseo == 10 && !hasPlayedVictoryAudio) 
         {
             hasPlayedVictoryAudio = true; 
             GameData.GameProgress = 5;
