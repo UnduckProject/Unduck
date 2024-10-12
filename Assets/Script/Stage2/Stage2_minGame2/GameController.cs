@@ -115,7 +115,7 @@ public class GameController : MonoBehaviour
         set
         {
             score = Mathf.Max(0, value);
-            if (score >= 100) // 2000점 이상일 때
+            if (score >= 2000) // 2000점 이상일 때
             {
                 GameData.GameEND=true;
                 GameData.GameProgress=8;

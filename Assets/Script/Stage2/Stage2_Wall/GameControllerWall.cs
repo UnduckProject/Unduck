@@ -24,7 +24,7 @@ public class GameControllerWall : MonoBehaviour
 
     void Update()
     {
-        if(score == 1)
+        if(score == 10)
         {
             GameData.Win=true;
             GameData.GameProgress=7;

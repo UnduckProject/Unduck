@@ -12,11 +12,11 @@ public class zombieMission : MonoBehaviour
     public AudioClip[] storyAudioClips;
 
     private string [] storyLines = {
-        "이 곳은 은밀한 바이러스를 연구하던 연구시설 입니다.",
+        "이 곳은 은밀한 바이러스를 \n연구하던 연구시설 입니다.",
         "이 곳에서 어떤일이 벌어질지 모릅니다.",
-        "시약의 샘플은 연구실 바닥 사물들 근처에 있습니다.",
-        "시약의 샘플을 손을 쥐어 들고 움직이십시오.",
-        "그리고 박스안에다 두고 다시 오리의 세계로 돌아가십시오."
+        "시약의 샘플은 연구실 바닥 사물들 \n근처에 있습니다.",
+        "시약의 샘플을 손을 쥐어 \n들고 움직이십시오.",
+        "그리고 박스안에다 두고 다시 \n오리의 세계로 돌아가십시오."
     };
     private int currentLine = 0;
 

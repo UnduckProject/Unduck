@@ -13415,7 +13415,7 @@ MonoBehaviour:
   spawnArea: {x: 15, y: 10, z: 15}
   player: {fileID: 1017952134}
   timerText: {fileID: 1222080753}
-  timer: 10
+  timer: 60
 --- !u!4 &1215230527
 Transform:
   m_ObjectHideFlags: 0

@@ -18,7 +18,7 @@ public class Potion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (potions == 1) // 5로 고치기
+        if (potions == 5) // 5로 고치기
         {
             GameData.Win = true;
             GameData.duckwan=false;
