@@ -4,9 +4,9 @@
 
 
  
-## Version01.Demo 영상
+## 모든 영상보기
 
-https://www.youtube.com/watch?v=XSioYpFSCOU
+https://youtube.com/playlist?list=PLIdj2GUX0wT9xt-ytokkzKiZ6FPiE4unq&si=wNix3BXkzEe9DpQW
 
 ## Unduck의 목표
 
