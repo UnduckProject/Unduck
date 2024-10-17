@@ -12493,7 +12493,7 @@ MonoBehaviour:
   objectPrefabs:
   - {fileID: 2446235030235944412, guid: c1ad0e9c26db48040a2679cd8909fb3d, type: 3}
   monsterPrefab: {fileID: 8613085673280989841, guid: fe7475c0797f8ad4488f6027c63755a6, type: 3}
-  monsterSound: {fileID: 8300000, guid: 45847f04de9a37941947c80e29754f9e, type: 3}
+  monsterSound: {fileID: 8300000, guid: 2aa715f2b550839439223657bdf28ad4, type: 3}
   spawnInterval: 6
   spawnArea: {x: 13, y: 16, z: 13}
   player: {fileID: 899799889}

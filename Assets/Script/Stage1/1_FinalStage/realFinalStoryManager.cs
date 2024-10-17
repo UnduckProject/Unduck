@@ -19,11 +19,11 @@ public class realFinalStoryManager : MonoBehaviour
     public AudioClip[] storyAudioClips;
 
     private string [] storyLines = {
-        "이런 현실세계가 무너지기 시작하고 있습니다.",
+        "이런 현실세계가 무너지기 \n시작하고 있습니다.",
         "두덕이한테 당해버렸군요.",
-        "조심하십시오. 두덕이가 커져\n이제 당신에게 피해를 주게됩니다.",
+        "조심하십시오. 두덕이가 커져\n이제 당신에게 \n피해를 주게됩니다.",
         "두덕이가 던지는 구체를 \n배트로 변한 손으로 쳐내십시오.",
-        "오른손목 위에는 플레이어의 체력\n 정면에는 두덕이의 체력이 나오게됩니다.",
+        "오른손목 위에는 플레이어의 체력 \n정면에는 두덕이의 \n체력이 나오게됩니다.",
         "구체에 맞지 않도록 조심하세요."
     };
     private int currentLine = 0;
