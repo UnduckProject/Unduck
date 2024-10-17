@@ -115,3 +115,6 @@ Ray Interaction을 이용하여 멀리 있는 블럭타일의 색을 변경할 �
 Ezy-Slice: https://github.com/DavidArayan/ezy-slice
 
 Ai voice: 네이버 클로바
+
+### 기획: 2024.03 - 2024.05
+### 제작: 2024.07 - 2024.10
