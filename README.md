@@ -24,11 +24,11 @@ Meta Quest2를 기반으로 한 이 VR, AR, MR 체험은 사용자가 몰입할 
 현재 나와있는 Quest Pro, Quest3에 비해 부족한 기능들 면에서 Quest2로 VR, AR, MR을 통해 다채로운 환경과 상황을 체험할 수 있게 만들었습니다. 각 체험은 사용자의 호기심을 자극하고 흥미를 유발합니다.
 
 ## Skills
-# MainMenu
+### MainMenu
 
 ![메인메뉴](https://github.com/user-attachments/assets/c72540a2-2bf2-4c5d-8327-ff7784bb2994)
 
-# Stage1
+### Stage1
 
 *NPCController and OVRCameraRIGController*
 
@@ -56,7 +56,7 @@ MRUK를 이용하여 미리 설정한 방구조에서 Bed 와 Table을 인식하
 
 Ray Grab을 이용해 멀리 있는 오브젝트를 선택하여 잡을 수 있게되고, Bat를 휘두르면 상대 몬스터에게 구체 오브젝트가 날라가게 됨.
 
-# Stage2
+### Stage2
 
 *Grab and AI Nav*
 ![Potion](https://github.com/user-attachments/assets/0180809e-0a29-42b0-92b5-0ebb9333bddc)
@@ -71,7 +71,7 @@ Ray Grab을 이용해 멀리 있는 오브젝트를 선택하여 잡을 수 있�
 
 Ray Interaction을 이용하여 멀리 있는 블럭타일의 색을 변경할 수 있도록 함.
 
-#Stage1 and Stage2
+### Stage1 and Stage2
 
 *MRUK, Passthrough Falsh and Invisible Object*
 
@@ -89,7 +89,7 @@ Ray Interaction을 이용하여 멀리 있는 블럭타일의 색을 변경할 �
 
 두더지 게임 또한 침대 혹은 테이블에서만 생성이 되고, 망치도 테이블에서만 생성이 된다. 
 
-# Practice Mode
+### Practice Mode
 
 ![PracticeMode](https://github.com/user-attachments/assets/ef66db35-4d49-4057-9b72-d8bb4ac386f8)
 
@@ -119,11 +119,12 @@ Meta Quest2를 기반으로 한 이 VR, AR, MR 체험은 사용자가 몰입할 
 현재 나와있는 Quest Pro, Quest3에 비해 부족한 기능들 면에서 Quest2로 VR, AR, MR을 통해 다채로운 환경과 상황을 체험할 수 있게 만들었습니다. 각 체험은 사용자의 호기심을 자극하고 흥미를 유발합니다.
 
 ## Skills
-# MainMenu
+
+### MainMenu
 
 ![메인메뉴](https://github.com/user-attachments/assets/c72540a2-2bf2-4c5d-8327-ff7784bb2994)
 
-# Stage1
+### Stage1
 
 *NPCController and OVRCameraRIGController*
 
@@ -151,7 +152,7 @@ MRUK를 이용하여 미리 설정한 방구조에서 Bed 와 Table을 인식하
 
 Ray Grab을 이용해 멀리 있는 오브젝트를 선택하여 잡을 수 있게되고, Bat를 휘두르면 상대 몬스터에게 구체 오브젝트가 날라가게 됨.
 
-# Stage2
+### Stage2
 
 *Grab and AI Nav*
 ![Potion](https://github.com/user-attachments/assets/0180809e-0a29-42b0-92b5-0ebb9333bddc)
@@ -166,7 +167,7 @@ Ray Grab을 이용해 멀리 있는 오브젝트를 선택하여 잡을 수 있�
 
 Ray Interaction을 이용하여 멀리 있는 블럭타일의 색을 변경할 수 있도록 함.
 
-#Stage1 and Stage2
+### Stage1 and Stage2
 
 *MRUK, Passthrough Falsh and Invisible Object*
 
@@ -184,7 +185,7 @@ Ray Interaction을 이용하여 멀리 있는 블럭타일의 색을 변경할 �
 
 두더지 게임 또한 침대 혹은 테이블에서만 생성이 되고, 망치도 테이블에서만 생성이 된다. 
 
-# Demo Mode
+### Demo Mode
 
 ![PracticeMode](https://github.com/user-attachments/assets/ef66db35-4d49-4057-9b72-d8bb4ac386f8)
 
@@ -192,15 +193,6 @@ Ray Interaction을 이용하여 멀리 있는 블럭타일의 색을 변경할 �
 
 메뉴 또한 Ray Interaction을 이용한 UI로 스크롤 할 수 있도록 했다.
 
-
-
-
-
-
-
-
-
-
-# 사용된 자료
+### 사용된 자료
 
 Ai voice: 네이버 클로바
