@@ -52,7 +52,7 @@ MRUK를 이용하여 미리 설정한 방구조에서 Bed 와 Table을 인식하
 
 ![GolemSlice](https://github.com/user-attachments/assets/87228c3a-9f17-486c-986b-dc6d08eb22d1)
 
- EasySlice를 사용하여 오브젝트를 자를 수 있게함.
+ Ezy-Slice 사용하여 오브젝트를 자를 수 있게함.
 
 *Ray Grab and BatContorller*
 
@@ -111,5 +111,7 @@ Ray Interaction을 이용하여 멀리 있는 블럭타일의 색을 변경할 �
 메뉴 또한 Ray Interaction을 이용한 UI로 스크롤 할 수 있도록 했다.
 
 ### 사용된 자료
+
+Ezy-Slice: https://github.com/DavidArayan/ezy-slice
 
 Ai voice: 네이버 클로바
