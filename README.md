@@ -4,7 +4,7 @@
 
 
 
- 
+ <div>안양대학교 2024 캡스톤디자인 대상</div>
 ## 모든 영상보기
 
 https://youtube.com/playlist?list=PLIdj2GUX0wT9xt-ytokkzKiZ6FPiE4unq&si=wNix3BXkzEe9DpQW
