@@ -7,6 +7,8 @@
 ## 수상내역
 
 안양대학교 2024 캡스톤디자인 경진대회 (대상)
+<figure class="half">  <a href="link"><img src="https://github.com/user-attachments/assets/2f493ca0-eab6-4ac3-88df-8b3815d51d9d"></a>  <a href="link"><img src="https://github.com/user-attachments/assets/0e834330-3047-44d6-9d0e-f3d3e4996fbb"></a>  <figcaption>2개이미지.</figcaption></figure>
+
 ![KakaoTalk_20250111_225124760](https://github.com/user-attachments/assets/2f493ca0-eab6-4ac3-88df-8b3815d51d9d)
 ![KakaoTalk_20250111_225124760_01](https://github.com/user-attachments/assets/0e834330-3047-44d6-9d0e-f3d3e4996fbb)
 
