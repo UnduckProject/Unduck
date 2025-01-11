@@ -40,7 +40,7 @@ Meta Quest2를 기반으로 한 이 VR, AR, MR (XR, 확장 현실)체험은 사�
 <p align="center"><img src="https://github.com/user-attachments/assets/ed557b13-129b-4a7d-b918-cdfeb770b55a"></p>
 
 ---
-## Skills
+## 스테이지 별 주요 기술
 ### MainMenu
 
 ![메인메뉴](https://github.com/user-attachments/assets/c72540a2-2bf2-4c5d-8327-ff7784bb2994)
@@ -133,5 +133,4 @@ https://github.com/UnduckProject/Assets_Source
 </div>
 
 ### 팀원: 강형진, 문경만
-### 기획: 2024.03 - 2024.05
 ### 제작: 2024.07 - 2024.10
