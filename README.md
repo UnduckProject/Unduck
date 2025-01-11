@@ -1,3 +1,4 @@
+<div align="center">
 # Unduck_XR Made with Unity
 
 <p align="center"><img src="https://github.com/user-attachments/assets/5488a343-1f6e-443b-b21b-6c48b81bc194"></p>
@@ -123,9 +124,9 @@ Ray Interaction을 이용하여 멀리 있는 블럭타일의 색을 변경할 �
 
 ### 사용된 자료
 
-Ezy-Slice: https://github.com/DavidArayan/ezy-slice
+https://github.com/UnduckProject/Assets_Source
+</div>
 
-Ai voice: 네이버 클로바
-
+### 팀원: 강형진, 문경만
 ### 기획: 2024.03 - 2024.05
 ### 제작: 2024.07 - 2024.10
