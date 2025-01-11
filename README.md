@@ -6,7 +6,7 @@
 
 ## 수상내역
 
-<div align="center" style=" font-weight: bold; "> 안양대학교 2024 캡스톤디자인 경진대회 (대상) </div>
+<div align="center"> 안양대학교 2024 캡스톤디자인 경진대회 (대상)</div>
 
 ![KakaoTalk_20250111_225124760](https://github.com/user-attachments/assets/2f493ca0-eab6-4ac3-88df-8b3815d51d9d) | ![KakaoTalk_20250111_225124760_01](https://github.com/user-attachments/assets/0e834330-3047-44d6-9d0e-f3d3e4996fbb)
 ---|---|
@@ -30,6 +30,9 @@ Meta Quest2를 기반으로 한 이 VR, AR, MR (XR, 확장 현실)체험은 사�
 *구 하드웨어로 즐길 수 있는 다양한 체험*
 
 현재 나와있는 Quest Pro, Quest3에 비해 부족한 기능들 면에서 Quest2로 VR, AR, MR을 통해 다채로운 환경과 상황을 체험할 수 있게 만들었습니다. 각 체험은 사용자의 호기심을 자극하고 흥미를 유발합니다.
+
+## 시스템 구성도
+<p align="center"><img src="https://github.com/user-attachments/assets/ed557b13-129b-4a7d-b918-cdfeb770b55a"></p>
 
 ## Skills
 ### MainMenu
