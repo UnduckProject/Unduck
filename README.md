@@ -1,10 +1,11 @@
 <div align="center">
+  
 # Unduck_XR Made with Unity
 
 <p align="center"><img src="https://github.com/user-attachments/assets/5488a343-1f6e-443b-b21b-6c48b81bc194"></p>
 
 
-
+---
 ## 수상내역
 
 <div align="center"> 안양대학교 2024 캡스톤디자인 경진대회 (대상)</div>
@@ -12,29 +13,33 @@
 ![KakaoTalk_20250111_225124760](https://github.com/user-attachments/assets/2f493ca0-eab6-4ac3-88df-8b3815d51d9d) | ![KakaoTalk_20250111_225124760_01](https://github.com/user-attachments/assets/0e834330-3047-44d6-9d0e-f3d3e4996fbb)
 ---|---|
 
-
+---
 ## 모든 영상보기
 
 https://youtube.com/playlist?list=PLIdj2GUX0wT9xt-ytokkzKiZ6FPiE4unq&si=wNix3BXkzEe9DpQW
 
+---
 ## Unduck의 목표
 
 Meta Quest2를 기반으로 한 이 VR, AR, MR (XR, 확장 현실)체험은 사용자가 몰입할 수 있는 스토리와 재미있는 미니게임을 결합하여 제공합니다. 기존 Meta Quest2의 부족한 MR 경험을 보완하고, 다양한 체험을 통해 새로운 차원의 재미를 선사하는 것이 목표입니다.
 
+---
 ## Unduck만의 특징
 
 *체험프로그램에 포함된 스토리*
 
 사용자는 게임의 스토리에 따라 진행하며, 각 단계에서 다양한 미니게임을 통해 이야기를 이어나갑니다. 이는 사용자에게 깊은 감정적 연결을 제공합니다.
 
-  
+
 *구 하드웨어로 즐길 수 있는 다양한 체험*
 
 현재 나와있는 Quest Pro, Quest3에 비해 부족한 기능들 면에서 Quest2로 VR, AR, MR을 통해 다채로운 환경과 상황을 체험할 수 있게 만들었습니다. 각 체험은 사용자의 호기심을 자극하고 흥미를 유발합니다.
 
+---
 ## 시스템 구성도
 <p align="center"><img src="https://github.com/user-attachments/assets/ed557b13-129b-4a7d-b918-cdfeb770b55a"></p>
 
+---
 ## Skills
 ### MainMenu
 
